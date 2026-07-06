@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Story | The Smart Walking Stick</title>
+  <meta name="description" content="Why I built the Smart Walking Stick: watching my grandad live with Parkinson's disease, and finding a gap that engineering could fill. The personal story behind the project.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Story | The Smart Walking Stick">
+  <meta property="og:description" content="Every engineering project starts somewhere. For me, it started at home, watching my grandfather live with Parkinson's disease.">
+  <meta property="og:image" content="images/grandad.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#FAF7F2">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Smart <span>Walking Stick</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        <span>Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="why.html" aria-current="page">The Story</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="future-plans.html">Future Plans</a>
+        <a href="about.html">About Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">The story</span>
+        <h1>Why I built the Smart Walking Stick</h1>
+        <p class="lede">Every engineering project starts somewhere. For me, it started at home, watching my grandfather.</p>
+      </div>
+    </section>
+
+    <!-- ============ Personal motivation ============ -->
+    <section class="section">
+      <div class="container split">
+        <div class="prose reveal">
+          <span class="eyebrow">The personal motivation</span>
+          <h2 style="margin-top: 0">It started with my grandad</h2>
+          <p>My grandfather lives with <strong>Parkinson's disease</strong>. Watching him face the daily challenges it brings, the unpredictability of freezing episodes, the loss of independence, the quiet frustration of a body that doesn't always respond the way it should, was what first made me want to do something about it.</p>
+          <p>When it came to choosing my final year dissertation project, this felt like the only choice. I didn't want to design something abstract for the sake of an academic exercise. I wanted to build something that could genuinely make a difference to his life, and to the lives of the millions of other people around the world living with Parkinson's every day.</p>
+          <p>That feeling, of wanting to build something that actually helps, has driven every decision in this project from the very beginning.</p>
+        </div>
+        <figure class="photo portrait reveal" style="--reveal-delay: 100ms">
+          <picture>
+            <source srcset="images/grandad.webp" type="image/webp">
+            <img src="images/grandad.jpg" width="388" height="720"
+                 alt="Euan standing beside his grandad, who is smiling and holding the Smart Walking Stick prototype in his hand">
+          </picture>
+          <figcaption>My grandad and me, with the Smart Walking Stick prototype.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ Understanding the problem ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="prose reveal">
+          <span class="eyebrow">Understanding the problem</span>
+          <h2 style="margin-top: 0">What Freezing of Gait actually is</h2>
+          <p>Freezing of Gait is one of the most debilitating symptoms of Parkinson's disease. The brain sends the signal to walk, but the feet suddenly fail to respond, as if glued to the floor. Episodes strike without warning: in a doorway, at a kerb, mid-conversation. They raise the risk of falls and, over time, chip away at a person's confidence to move independently at all.</p>
+          <p>What makes it so compelling as an engineering problem is that an evidence-based response already exists. Research consistently shows that providing an external rhythm, whether auditory, haptic or visual, can help people with Parkinson's break out of a freeze and restore their walking cadence. Clinicians call this <strong>external cueing</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Engineering motivation ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="prose reveal">
+          <span class="eyebrow">The engineering motivation</span>
+          <h2 style="margin-top: 0">A gap engineering could fill</h2>
+          <p>As a Mechanical Engineer, I was taught to solve problems. And Freezing of Gait is a problem with a real, evidence-based solution available: <strong>multimodal cueing</strong>.</p>
+          <p>The science is there. The clinical evidence is there. What isn't there, for most patients, is an affordable, compact, all-in-one device that delivers all three types of cue in a familiar, everyday walking stick form factor.</p>
+          <p>Existing devices that do offer multimodal cueing, like the Rollz Motion Rollator, are expensive, bulky and designed for people who already need a walking frame. There is a clear gap for something more accessible, more independent and more practical for earlier-stage Parkinson's patients who still use a walking stick.</p>
+          <p>That gap felt like exactly the kind of problem an engineer should try to solve.</p>
+        </div>
+
+        <blockquote class="pullquote reveal">
+          <p>I didn't want to design something abstract for the sake of an academic exercise. I wanted to build something that could genuinely make a difference.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ Challenges and lessons ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Challenges and lessons</span>
+          <h2>It wasn't always straightforward</h2>
+          <p>Building the Smart Walking Stick meant hardware failures, software bugs, wiring problems and more late nights than I can count. Each problem left a lesson behind.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card reveal">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M11 9h4a2 2 0 0 0 2-2V3"/><circle cx="9" cy="9" r="2"/><path d="M7 21v-4a2 2 0 0 1 2-2h4"/><circle cx="15" cy="15" r="2"/></svg></span>
+            <h3>From breadboard to PCB</h3>
+            <p>The tangle of breadboard wiring was fragile and failure-prone, so I designed a custom printed circuit board that consolidates every connection onto a single board sitting directly on the Pi's header.</p>
+          </div>
+          <div class="card reveal" style="--reveal-delay: 60ms">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v6"/><path d="m8 21 4-11 4 11"/><path d="M6 21h12"/></svg></span>
+            <h3>Listen to the users</h3>
+            <p>Patients found the red laser hard to see under indoor lighting, so future iterations will use a green laser. The best design feedback came from the people the stick is for.</p>
+          </div>
+          <div class="card reveal" style="--reveal-delay: 120ms">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
+            <h3>Don't depend on a phone</h3>
+            <p>In the middle of a freezing episode, reaching for a screen isn't realistic. That single insight from patient feedback is shaping Prototype 2, which puts physical buttons on the stick itself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ What drove me forward ============ -->
+    <section class="section">
+      <div class="container split">
+        <div class="prose reveal">
+          <span class="eyebrow">What drove me forward</span>
+          <h2 style="margin-top: 0">Three things kept me going</h2>
+          <p><strong>The people it was for.</strong> Every time I thought about why I was doing this, my grandfather and the millions of others like him, the frustration of a difficult day felt very small by comparison.</p>
+          <p><strong>The response from patients.</strong> Presenting the prototype to the <strong>Parkinson's UK Southend support group</strong> in April 2026 was one of the most meaningful experiences of my engineering career so far. Seeing real people engage with the device, feel the vibration in the handle, hear the beat, and tell me it was something they would genuinely want to use: that was everything.</p>
+          <p><strong>The belief that engineering should matter.</strong> I became an engineer because I wanted to build things that make a difference. The Smart Walking Stick is the clearest expression of that belief I have found so far.</p>
+        </div>
+        <figure class="photo reveal" style="--reveal-delay: 100ms">
+          <picture>
+            <source srcset="images/parkinsons-uk.webp" type="image/webp">
+            <img src="images/parkinsons-uk.jpg" width="900" height="1200" loading="lazy"
+                 alt="Euan presenting the Smart Walking Stick to members of the Parkinson's UK Southend support group, who are seated and watching the demonstration">
+          </picture>
+          <figcaption>Demonstrating the prototype to the Parkinson's UK Southend support group, April 2026.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ Why continuing ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="prose reveal">
+          <span class="eyebrow">Why I am continuing</span>
+          <h2 style="margin-top: 0">The second chapter</h2>
+          <p>The prototype works. The feedback has been overwhelmingly positive. Parkinson's UK and PD Buddy have both encouraged me to push further. And there is a whole second chapter of this project still to write: automated detection, clinical trials, a better device, and hopefully one day a product that can reach the people who need it.</p>
+          <p>This project started because of my grandfather. It continues because of everyone with Parkinson's who deserves better tools to live with more independence and confidence every day.</p>
+          <div class="btn-row mt-6">
+            <a class="btn btn-primary" href="how-it-works.html">See how it works</a>
+            <a class="btn btn-secondary" href="future-plans.html">Read the roadmap</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact band ============ -->
+    <section class="contact-band">
+      <div class="container inner">
+        <div class="reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Follow the project, or say hello</h2>
+          <p>If you are a clinician, researcher, funder or part of a Parkinson's organisation, or you simply want to follow along, I would genuinely love to hear from you. There is no mailing list and no form: just send me an email.</p>
+        </div>
+        <div class="btn-row reveal">
+          <a class="btn btn-primary" href="mailto:euanpiercy22@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            Email me</a>
+          <a class="btn btn-secondary" href="https://github.com/EPisCoding">Follow on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">The Smart Walking Stick</p>
+          <p>An assistive technology project helping people with Parkinson's disease overcome Freezing of Gait. Built by Euan, continuing as an MRes at Swansea University.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="why.html">The Story</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="future-plans.html">Future Plans</a></li>
+            <li><a href="about.html">About Me</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:euanpiercy22@gmail.com">euanpiercy22@gmail.com</a></li>
+            <li><a href="https://github.com/EPisCoding">GitHub: EPisCoding</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">The Smart Walking Stick, a project by Euan. Started with one person in mind, built for many more.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

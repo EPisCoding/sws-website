@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Smart Walking Stick | Assistive technology for Parkinson's</title>
+  <meta name="description" content="The Smart Walking Stick helps people with Parkinson's disease overcome Freezing of Gait using a rhythmic beat, haptic vibration and a laser line on the floor. Built by Euan, now an MRes research project at Swansea University.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Smart Walking Stick">
+  <meta property="og:description" content="An assistive device helping people with Parkinson's disease overcome Freezing of Gait through multimodal cueing. A personal engineering project, now continuing as university research.">
+  <meta property="og:image" content="images/grandad.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#FAF7F2">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Smart <span>Walking Stick</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        <span>Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="why.html">The Story</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="future-plans.html">Future Plans</a>
+        <a href="about.html">About Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section class="home-hero">
+      <div class="container home-hero-grid">
+        <div>
+          <span class="eyebrow">An assistive technology project</span>
+          <h1>A walking stick that helps people with Parkinson's keep moving</h1>
+          <p class="lede">Freezing of Gait leaves the brain sending signals to walk while the feet suddenly stop responding. The Smart Walking Stick answers with three evidence-based cues at once: a steady beat, a gentle vibration in the handle, and a laser line on the floor. It began as a final year dissertation inspired by my grandad, and it is now continuing as an MRes research project at Swansea University.</p>
+          <div class="pill-row">
+            <span class="pill">3 cueing modes</span>
+            <span class="pill">Adjustable 60 to 140 BPM</span>
+            <span class="pill">Wireless app control</span>
+            <span class="pill">Tested with Parkinson's UK members</span>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="why.html">Read the story behind it</a>
+            <a class="btn btn-secondary" href="how-it-works.html">See how it works</a>
+          </div>
+        </div>
+        <div class="hero-figure">
+          <figure>
+            <picture>
+              <source srcset="images/grandad.webp" type="image/webp">
+              <img src="images/grandad.jpg" width="388" height="720"
+                   alt="Euan standing beside his grandad, who is smiling and holding the Smart Walking Stick prototype in his hand"
+                   fetchpriority="high">
+            </picture>
+            <figcaption>My grandad and me, with the Smart Walking Stick prototype.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ The problem ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The problem</span>
+          <h2>When walking suddenly stops</h2>
+        </div>
+        <div class="prose reveal">
+          <p>Parkinson's disease affects millions of people around the world. One of its most debilitating symptoms is <strong>Freezing of Gait</strong>: mid-step, the brain sends the signal to walk, but the feet fail to respond. Episodes are unpredictable, they raise the risk of falls, and over time they quietly erode a person's independence and confidence.</p>
+          <p>There is good news in the research. Providing an external rhythm, whether heard, felt or seen, can help the brain break out of a freeze and re-establish a walking cadence. Clinicians call this <strong>external cueing</strong>, and the evidence behind it is well established. What most patients lack is an affordable, compact device that delivers these cues in something they already use every day: a walking stick.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Cueing demo ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">External cueing</span>
+          <h2>How a beat breaks a freeze</h2>
+          <p>This short animation shows one cueing cycle: steady walking, a freezing episode, the stick responding with rhythmic cues, and the walking rhythm returning.</p>
+        </div>
+
+        <div class="cue-demo reveal" data-cue-demo data-phase="0">
+          <p class="visually-hidden">Looping animated diagram. A person walks steadily. A freezing episode stops their feet. The walking stick responds with a rhythmic beat, a vibration in the handle and a laser line projected on the floor. The person steps over the line and their walking rhythm returns.</p>
+          <div class="cue-stage" aria-hidden="true">
+            <svg class="cue-scene" viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0" y1="226" x2="720" y2="226" stroke="#E7E0D4" stroke-width="2"/>
+              <g class="ground-dashes" stroke="#D8D0C0" stroke-width="3" stroke-linecap="round">
+                <line x1="-60" y1="240" x2="-32" y2="240"/><line x1="0" y1="240" x2="28" y2="240"/><line x1="60" y1="240" x2="88" y2="240"/><line x1="120" y1="240" x2="148" y2="240"/><line x1="180" y1="240" x2="208" y2="240"/><line x1="240" y1="240" x2="268" y2="240"/><line x1="300" y1="240" x2="328" y2="240"/><line x1="360" y1="240" x2="388" y2="240"/><line x1="420" y1="240" x2="448" y2="240"/><line x1="480" y1="240" x2="508" y2="240"/><line x1="540" y1="240" x2="568" y2="240"/><line x1="600" y1="240" x2="628" y2="240"/><line x1="660" y1="240" x2="688" y2="240"/><line x1="720" y1="240" x2="748" y2="240"/>
+              </g>
+              <line class="laser-beam" x1="224" y1="180" x2="326" y2="222" stroke="#C2643C" stroke-width="2" stroke-dasharray="5 5"/>
+              <line class="laser-line" x1="304" y1="223" x2="352" y2="223" stroke="#C2643C" stroke-width="6" stroke-linecap="round"/>
+              <g fill="none" stroke="#33608C" stroke-width="3" stroke-linecap="round">
+                <path class="beat beat-1" d="M246 148 a24 24 0 0 1 0 36"/>
+                <path class="beat beat-2" d="M260 140 a34 34 0 0 1 0 52"/>
+                <path class="beat beat-3" d="M274 132 a44 44 0 0 1 0 68"/>
+              </g>
+              <g fill="none" stroke="#33608C" stroke-width="2.5">
+                <circle class="ring ring-1" cx="208" cy="148" r="24"/>
+                <circle class="ring ring-2" cx="208" cy="148" r="24"/>
+                <circle class="ring ring-3" cx="208" cy="148" r="24"/>
+              </g>
+              <g class="freeze-mark">
+                <circle cx="180" cy="38" r="15" fill="#B3261E"/>
+                <rect x="178" y="29" width="4" height="11" rx="2" fill="#fff"/>
+                <circle cx="180" cy="46" r="2.4" fill="#fff"/>
+              </g>
+              <g class="walker">
+                <circle cx="180" cy="84" r="15" fill="#2B2924"/>
+                <line x1="180" y1="99" x2="180" y2="158" stroke="#2B2924" stroke-width="11" stroke-linecap="round"/>
+                <line x1="180" y1="116" x2="157" y2="152" stroke="#2B2924" stroke-width="8" stroke-linecap="round"/>
+                <line x1="180" y1="116" x2="206" y2="146" stroke="#2B2924" stroke-width="8" stroke-linecap="round"/>
+                <g class="leg leg-a"><line x1="180" y1="158" x2="180" y2="221" stroke="#2B2924" stroke-width="9" stroke-linecap="round"/></g>
+                <g class="leg leg-b"><line x1="180" y1="158" x2="180" y2="221" stroke="#2B2924" stroke-width="9" stroke-linecap="round"/></g>
+                <line x1="210" y1="148" x2="224" y2="222" stroke="#33608C" stroke-width="6" stroke-linecap="round"/>
+                <rect x="206" y="158" width="17" height="26" rx="5" fill="#33608C" transform="rotate(10 214 171)"/>
+              </g>
+            </svg>
+          </div>
+          <ol class="cue-steps">
+            <li data-phase="0"><span class="step-title"><span class="step-num" aria-hidden="true">1</span>Walking steadily</span>The user walks at their own natural rhythm.</li>
+            <li data-phase="1"><span class="step-title"><span class="step-num" aria-hidden="true">2</span>A freeze begins</span>Mid-stride, the feet stop responding. This is Freezing of Gait.</li>
+            <li data-phase="2"><span class="step-title"><span class="step-num" aria-hidden="true">3</span>The stick cues</span>A steady beat, a gentle vibration in the handle and a laser line on the floor give the brain a rhythm to follow and a target to step over.</li>
+            <li data-phase="3"><span class="step-title"><span class="step-num" aria-hidden="true">4</span>Rhythm returns</span>Cueing helps movement restart, and the stride settles back into a steady rhythm.</li>
+          </ol>
+          <div class="cue-controls">
+            <button type="button" class="btn-quiet cue-toggle" data-cue-toggle>
+              <svg class="icon icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="7 4 20 12 7 20"/></svg>
+              <svg class="icon icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+              <span data-cue-label>Pause animation</span>
+            </button>
+            <p class="cue-note">A simplified illustration of one cueing cycle.</p>
+          </div>
+        </div>
+
+        <p class="mt-6 reveal"><a class="btn-quiet" href="how-it-works.html">Explore the full technology
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- ============ Bento: what it does ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The device</span>
+          <h2>What the Smart Walking Stick does</h2>
+        </div>
+        <div class="bento">
+          <div class="bento-tile bento-wide reveal">
+            <h3>Three cues, one familiar device</h3>
+            <p>Research shows multimodal cueing works best. The stick delivers all three cue types together, in a form factor people already trust.</p>
+            <ul class="cue-list">
+              <li>
+                <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+                <p><strong>Rhythmic beat</strong><span>A clear, metronome-like pulse from a built-in speaker, adjustable from 60 to 140 beats per minute.</span></p>
+              </li>
+              <li>
+                <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8 2 2-2 2 2 2-2 2"/><path d="m22 8-2 2 2 2-2 2 2 2"/><rect x="8" y="5" width="8" height="14" rx="1"/></svg></span>
+                <p><strong>Haptic vibration</strong><span>The handle pulses gently in time with the beat, a cue you can feel even in noisy places.</span></p>
+              </li>
+              <li>
+                <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v6"/><path d="m8 21 4-11 4 11"/><path d="M6 21h12"/></svg></span>
+                <p><strong>Laser floor line</strong><span>A visible line projected on the ground gives the brain a target to step over.</span></p>
+              </li>
+            </ul>
+          </div>
+          <div class="bento-tile bento-tile-photo bento-tall reveal" style="--reveal-delay: 60ms">
+            <picture>
+              <source srcset="images/parkinsons-uk.webp" type="image/webp">
+              <img src="images/parkinsons-uk.jpg" width="900" height="1200" loading="lazy"
+                   alt="Euan presenting the Smart Walking Stick to members of the Parkinson's UK Southend support group, who are seated and watching the demonstration">
+            </picture>
+            <p class="bento-photo-caption">Tested with real patients: demonstrating the prototype to the Parkinson's UK Southend support group, April 2026.</p>
+          </div>
+          <div class="bento-tile reveal" style="--reveal-delay: 120ms">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
+            <h3>A companion app</h3>
+            <p>An Android app controls every cue over Bluetooth, with voice commands, a live gait graph, session recording and a daily diary.</p>
+          </div>
+          <div class="bento-tile bento-stat reveal" style="--reveal-delay: 180ms">
+            <p class="stat-value">60-140</p>
+            <p class="stat-label">beats per minute, adjustable to match each user's natural walking pace</p>
+          </div>
+          <div class="bento-tile reveal" style="--reveal-delay: 240ms">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+            <h3>Sensing built in</h3>
+            <p>A six-axis motion sensor streams real gait data from the stick, the foundation for future automatic freeze detection.</p>
+          </div>
+          <div class="bento-tile reveal" style="--reveal-delay: 300ms">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+            <h3>Continuing as research</h3>
+            <p>The project is now an MRes at Swansea University: Prototype 2, structured clinical testing and machine learning are next.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Timeline ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Progress</span>
+          <h2>The journey so far</h2>
+        </div>
+        <ol class="timeline reveal">
+          <li>
+            <span class="when">The beginning</span>
+            <h3>A dissertation with a purpose</h3>
+            <p>I chose the Smart Walking Stick as my final year BEng dissertation at Swansea University, inspired by watching my grandad live with Parkinson's.</p>
+          </li>
+          <li>
+            <span class="when">Prototype 1</span>
+            <h3>From breadboard to custom PCB</h3>
+            <p>A Raspberry Pi based prototype delivering all three cues, a custom printed circuit board, and a full companion app connected over Bluetooth.</p>
+          </li>
+          <li>
+            <span class="when">April 2026</span>
+            <h3>Demonstrated to Parkinson's UK Southend</h3>
+            <p>Real people with Parkinson's held the stick, felt the vibration, heard the beat, and told me they would genuinely want to use it.</p>
+          </li>
+          <li>
+            <span class="when">Since the demo</span>
+            <h3>Encouragement to keep going</h3>
+            <p>The demonstration led to contact with Parkinson's UK Tech Partnerships and PD Buddy, a Parkinson's assistive technology business.</p>
+          </li>
+          <li>
+            <span class="when">Now</span>
+            <h3>MRes research at Swansea University</h3>
+            <p>The work continues as a Master of Research, with structured development and testing.</p>
+          </li>
+          <li class="is-future">
+            <span class="when">Next</span>
+            <h3>Prototype 2, clinical trials and automatic detection</h3>
+            <p><a href="future-plans.html">See the full roadmap</a> for what is planned, including machine learning based freeze detection.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Explore ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Explore</span>
+          <h2>Follow the whole story</h2>
+        </div>
+        <div class="card-grid">
+          <a class="card reveal" href="why.html">
+            <h3>The Story</h3>
+            <p>It started at home, watching my grandfather, and finding a gap that engineering could fill.</p>
+            <span class="card-more">Read the story
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+          <a class="card reveal" href="how-it-works.html" style="--reveal-delay: 60ms">
+            <h3>How It Works</h3>
+            <p>The three cueing modalities, the companion app, and the hardware inside the stick.</p>
+            <span class="card-more">See the technology
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+          <a class="card reveal" href="future-plans.html" style="--reveal-delay: 120ms">
+            <h3>Future Plans</h3>
+            <p>Prototype 2, clinical trials, machine learning research, and the road to a real product.</p>
+            <span class="card-more">See what is next
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+          <a class="card reveal" href="about.html" style="--reveal-delay: 180ms">
+            <h3>About Me</h3>
+            <p>Mechanical Engineering graduate at Swansea University, now researching the stick full time.</p>
+            <span class="card-more">Meet Euan
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact band ============ -->
+    <section class="contact-band">
+      <div class="container inner">
+        <div class="reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Follow the project, or say hello</h2>
+          <p>If you are a clinician, researcher, funder or part of a Parkinson's organisation, or you simply want to follow along, I would genuinely love to hear from you. There is no mailing list and no form: just send me an email.</p>
+        </div>
+        <div class="btn-row reveal">
+          <a class="btn btn-primary" href="mailto:euanpiercy22@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            Email me</a>
+          <a class="btn btn-secondary" href="https://github.com/EPisCoding">Follow on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">The Smart Walking Stick</p>
+          <p>An assistive technology project helping people with Parkinson's disease overcome Freezing of Gait. Built by Euan, continuing as an MRes at Swansea University.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="why.html">The Story</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="future-plans.html">Future Plans</a></li>
+            <li><a href="about.html">About Me</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:euanpiercy22@gmail.com">euanpiercy22@gmail.com</a></li>
+            <li><a href="https://github.com/EPisCoding">GitHub: EPisCoding</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">The Smart Walking Stick, a project by Euan. Started with one person in mind, built for many more.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
