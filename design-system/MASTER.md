@@ -138,6 +138,7 @@ States: hover darkens to `--color-primary-deep` and lifts to `--shadow-2` (trans
 - Brand: Fraunces wordmark, links home.
 - Desktop: inline nav links, `--color-ink-soft`, active page marked by 2px terracotta underline plus `aria-current="page"`.
 - Mobile (<768px): disclosure button ("Menu", hamburger icon + label) toggling a vertical panel; button has `aria-expanded`; panel links min-height 44px; Escape closes.
+- Donate button: a filled primary pill (`.nav-donate`) at the end of the nav on every page, linking to Stripe checkout in a new tab (`rel="noopener"`). This is the one sanctioned exception to the one-primary-CTA rule, since the header persists across views. On mobile it sits full-width at the bottom of the nav panel.
 - Skip link ("Skip to main content") as first focusable element, visible on focus.
 - Footer: dark ink background, cream text, three columns (project, pages, contact), collapsing to stacked on mobile.
 
