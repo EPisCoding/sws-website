@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Smart Walking Stick mark: cane with laser floor line -->
+  <rect width="512" height="512" rx="112" fill="#2B2924"/>
+  <!-- Cane: vertical shaft with crook handle -->
+  <path d="M184 400 L184 172 A72 72 0 0 1 328 172 L328 204"
+        fill="none" stroke="#FAF7F2" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Laser line projected on the floor, ahead of the stick -->
+  <path d="M236 448 L340 448"
+        fill="none" stroke="#C2643C" stroke-width="24" stroke-linecap="round"/>
+</svg>
