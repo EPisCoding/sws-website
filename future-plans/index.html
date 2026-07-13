@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Plans | The Smart Walking Stick</title>
+  <meta name="description" content="The roadmap for the Smart Walking Stick: Prototype 2 with on-stick controls, structured clinical testing, machine learning research into automatic Freezing of Gait detection, and funding plans.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Future Plans | The Smart Walking Stick">
+  <meta property="og:description" content="Prototype 2, clinical trials, machine learning research into automatic freeze detection, and the road to a clinically validated, affordable assistive device.">
+  <meta property="og:image" content="https://www.smartwalkingstick.co.uk/images/parkinsons-uk.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://www.smartwalkingstick.co.uk/future-plans/">
+  <link rel="canonical" href="https://www.smartwalkingstick.co.uk/future-plans/">
+  <meta name="theme-color" content="#FAF7F2">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="/">Smart <span>Walking Stick</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        <span>Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/why/">The Story</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/future-plans/" aria-current="page">Future Plans</a>
+        <a href="/about/">About Me</a>
+        <a class="btn btn-primary nav-donate" href="https://buy.stripe.com/14A14p4TH4kAeeA4gY1VK00" target="_blank" rel="noopener">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">The roadmap</span>
+        <h1>What comes next</h1>
+        <p class="lede">The Smart Walking Stick prototype has proven the concept works. Real Parkinson's patients have used it, given feedback, and told us they would want something like it in their lives. But this is very much the beginning, not the end. Here is where the project is headed.</p>
+      </div>
+    </section>
+
+    <!-- ============ Roadmap overview ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">At a glance</span>
+          <h2>Four workstreams</h2>
+        </div>
+        <div class="card-grid">
+          <a class="card reveal" href="#prototype-2">
+            <span class="badge-now">In development</span>
+            <h3>Prototype 2</h3>
+            <p>Smaller, cheaper hardware with physical buttons on the stick itself.</p>
+          </a>
+          <a class="card reveal" href="#clinical-testing" style="--reveal-delay: 60ms">
+            <span class="badge-future">Planned</span>
+            <h3>Clinical testing</h3>
+            <p>Structured trials measuring quantitative gait parameters with and without cueing.</p>
+          </a>
+          <a class="card reveal" href="#machine-learning" style="--reveal-delay: 120ms">
+            <span class="badge-future">Future research</span>
+            <h3>Automatic freeze detection</h3>
+            <p>Machine learning on sensor data to detect freezing episodes in real time.</p>
+          </a>
+          <a class="card reveal" href="#funding" style="--reveal-delay: 180ms">
+            <span class="badge-now">Ongoing</span>
+            <h3>Grants and funding</h3>
+            <p>Building the resources to develop a medical device properly.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Prototype 2 ============ -->
+    <section class="section section-alt" id="prototype-2">
+      <div class="container">
+        <div class="prose reveal">
+          <span class="eyebrow">Workstream one</span>
+          <h2 style="margin-top: 0">Prototype 2: working without the app <span class="badge-now">In development</span></h2>
+          <p>The first prototype required a smartphone app to control all the cueing features. While the app is powerful and gives users a huge amount of flexibility, feedback from Parkinson's patients made one thing clear: not everyone wants to rely on a phone, and in the middle of a freezing episode, reaching for a screen isn't always realistic.</p>
+          <p><strong>Prototype 2 moves the controls onto the stick itself.</strong></p>
+          <p>By migrating from the Raspberry Pi Zero 2W to an <strong>ESP32 microcontroller</strong>, the device becomes smaller, lighter and cheaper. Physical buttons built directly into the walking stick handle will allow users to toggle the audio beat, vibration and laser on and off without needing their phone at all. The smartphone app will still be available for users who want fine-grained control and session recording, but the device will work completely independently without it.</p>
+          <p>The custom PCB design developed in Prototype 1 will be refined and adapted for the ESP32, making the hardware more compact and robust.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Clinical testing ============ -->
+    <section class="section" id="clinical-testing">
+      <div class="container">
+        <div class="prose reveal">
+          <span class="eyebrow">Workstream two</span>
+          <h2 style="margin-top: 0">Clinical testing <span class="badge-future">Planned</span></h2>
+          <p>The demonstration with the <strong>Parkinson's UK Southend support group</strong> in April 2026 provided valuable qualitative feedback. The next step is rigorous, structured clinical testing.</p>
+          <p>Working through the <strong>MRes at Swansea University</strong>, the plan is to conduct trials measuring quantitative gait parameters with and without cueing, including stride length, cadence and step symmetry, across a cohort of Parkinson's patients. This will build a proper evidence base for the device's effectiveness and provide the kind of data needed to support grant applications, regulatory approval and eventual clinical adoption.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Machine learning ============ -->
+    <section class="section section-alt" id="machine-learning">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Workstream three: future work</span>
+          <h2>Teaching the stick to recognise a freeze <span class="badge-future">Future research</span></h2>
+          <p>This is the most ambitious part of the roadmap, and it was the most requested feature by the Parkinson's UK group during the demonstration. It is research I am planning, not a feature that exists today.</p>
+        </div>
+        <div class="prose reveal">
+          <p>Currently the device relies on the user manually activating the cueing when they feel a freeze coming. The vision for the next stage of the project is for the device to <strong>detect a Freezing of Gait episode automatically</strong> and respond without any input needed from the user.</p>
+          <p>The foundations are already in place. The MPU6050 motion sensor built into the stick continuously captures accelerometer and gyroscope data, and the companion app can already record and export walking sessions. By collecting labelled gait data, walking normally and walking with freezing episodes, a <strong>machine learning model</strong> can be trained to recognise the characteristic signal patterns of a freeze in real time.</p>
+          <p>The genuinely hard problem, and the heart of the research, is distinguishing a real freezing episode from an intentional stop. A person pausing at a kerb, turning to talk to someone, or simply choosing to stand still produces sensor data that can look superficially similar to a freeze. A useful detector has to tell these situations apart reliably, because a device that cues every time its user chooses to stop would quickly become a device its user turns off.</p>
+          <p>Once a freeze is detected, the device would be able to propose or automatically trigger the appropriate cueing response, audio, haptic or visual, to help the user break the freeze as quickly as possible, even in cases where they are unable to interact with the device manually.</p>
+          <p>This would bring the Smart Walking Stick considerably closer to a truly autonomous assistive device, and represent a meaningful step forward in what technology can offer Parkinson's patients.</p>
+        </div>
+        <div class="card-grid mt-7">
+          <div class="card reveal">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+            <h3>1. Collect</h3>
+            <p>Record labelled gait data from the stick's motion sensor: normal walking, freezing episodes and deliberate stops.</p>
+          </div>
+          <div class="card reveal" style="--reveal-delay: 60ms">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h6"/><path d="m13 12 4.2-5.6"/><path d="m13 12 4.2 5.6"/></svg></span>
+            <h3>2. Train</h3>
+            <p>Train a machine learning model to recognise the signal patterns that separate a genuine freeze from an intentional stop.</p>
+          </div>
+          <div class="card reveal" style="--reveal-delay: 120ms">
+            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+            <h3>3. Respond</h3>
+            <p>Trigger the right cueing automatically, in real time, even when the user cannot reach for a control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Funding ============ -->
+    <section class="section" id="funding">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Workstream four</span>
+          <h2>Grants and funding <span class="badge-now">Ongoing</span></h2>
+          <p>Developing a medical device properly takes resources. The plan is to pursue funding through several routes.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card reveal">
+            <h3>Parkinson's UK Non-Drug Approaches Research Grant</h3>
+            <p>Parkinson's UK Tech Partnerships have specifically recommended applying to this scheme, which funds research into non-pharmacological interventions for Parkinson's disease. The target is to apply in the next funding round.</p>
+          </div>
+          <div class="card reveal" style="--reveal-delay: 60ms">
+            <h3>Innovate UK / Biomedical Catalyst</h3>
+            <p>For later stage development once clinical evidence is building, these schemes support the translation of research into real products.</p>
+          </div>
+          <div class="card reveal" style="--reveal-delay: 120ms">
+            <h3>University research funding</h3>
+            <p>Through the MRes and potential PhD continuation, accessing university and EPSRC research funding to support the clinical trial work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Bigger picture ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="prose reveal">
+          <span class="eyebrow">The bigger picture</span>
+          <h2 style="margin-top: 0">Where this is all heading</h2>
+          <p>The long-term goal is straightforward: to turn the Smart Walking Stick into a <strong>clinically validated, affordable assistive device</strong> that can reach the people who need it.</p>
+          <p>Existing multimodal cueing devices are expensive and inaccessible for many patients. The Smart Walking Stick is being built from the ground up with accessibility and affordability as core design principles: accessible hardware, open development and a pragmatic approach to cost.</p>
+          <p>There is a real gap in the market and a real clinical need. The project has already demonstrated that people with Parkinson's respond positively to the device. The next steps are to build the evidence, improve the hardware, and find a path to getting it into the hands of patients, whether through the NHS, Parkinson's charities, or directly to the people who need it.</p>
+        </div>
+        <blockquote class="pullquote reveal">
+          <p>This project started with one person in mind. The goal is for it to end up helping many thousands more.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ Contact band ============ -->
+    <section class="contact-band">
+      <div class="container inner">
+        <div class="reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Follow the project, or say hello</h2>
+          <p>If you are a clinician, researcher, funder or part of a Parkinson's organisation, or you simply want to follow along, I would genuinely love to hear from you. There is no mailing list and no form: just send me an email.</p>
+        </div>
+        <div class="btn-row reveal">
+          <a class="btn btn-primary" href="mailto:euanpiercy22@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            Email me</a>
+          <a class="btn btn-secondary" href="https://github.com/EPisCoding">Follow on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">The Smart Walking Stick</p>
+          <p>An assistive technology project helping people with Parkinson's disease overcome Freezing of Gait. Built by Euan, continuing as an MRes at Swansea University.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="/why/">The Story</a></li>
+            <li><a href="/how-it-works/">How It Works</a></li>
+            <li><a href="/future-plans/">Future Plans</a></li>
+            <li><a href="/about/">About Me</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:euanpiercy22@gmail.com">euanpiercy22@gmail.com</a></li>
+            <li><a href="https://github.com/EPisCoding">GitHub: EPisCoding</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">The Smart Walking Stick, a project by Euan. Started with one person in mind, built for many more.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

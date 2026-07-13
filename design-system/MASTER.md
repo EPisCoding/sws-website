@@ -195,5 +195,5 @@ Rules:
 6. Figures always include a caption; captions state what the reader is looking at, not marketing copy.
 7. Prose pages keep the 42rem measure; full-width breakouts allowed only for figures, the timeline, card grids and the cueing demo.
 8. Every page ends with the same quiet contact band (not a hard sell): short sentence + email + GitHub.
-9. Consistent head block on every page: unique `<title>` ("Page — The Smart Walking Stick"), unique meta description, Open Graph title/description/image, canonical-friendly relative links.
+9. Consistent head block on every page: unique `<title>` ("Page — The Smart Walking Stick"), unique meta description, Open Graph title/description/image. Pages live in folders for clean URLs (`/why/`, `/about/`); internal links and asset paths are root-relative (`/css/main.css`); canonical and OG URLs are absolute on `https://www.smartwalkingstick.co.uk/`. Old flat `.html` paths keep meta-refresh redirect stubs.
 10. Shared CSS in one `css/main.css` (tokens + components + page sections); shared behaviour in one `js/main.js` (nav toggle, scroll reveal, demo controls). No frameworks, no build step.
