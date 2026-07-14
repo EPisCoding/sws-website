@@ -300,6 +300,31 @@
           <h2>Help fund the next prototype</h2>
           <p>Your donation helps fund prototype development, testing, and IP protection for the Smart Walking Stick this summer. Every contribution goes directly toward building a working device and putting it in front of people with Parkinson's for real-world testing.</p>
         </div>
+        <div class="donation-tracker reveal" data-donation-tracker hidden>
+          <p class="donation-figures">
+            <span class="donation-raised" data-donation-raised>£0</span>
+            <span class="donation-goal" data-donation-goal>raised of £700</span>
+          </p>
+          <div role="progressbar" aria-label="Donations raised toward the goal" aria-valuemin="0" aria-valuemax="700" aria-valuenow="0" data-donation-bar>
+            <svg class="donation-scene" viewBox="0 0 640 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <defs>
+                <filter id="donation-glow" filterUnits="userSpaceOnUse" x="0" y="34" width="640" height="30">
+                  <feGaussianBlur stdDeviation="4"/>
+                </filter>
+              </defs>
+              <line class="donation-floor" x1="6" y1="52" x2="634" y2="52" stroke="#E7E0D4" stroke-width="2"/>
+              <line class="donation-target" x1="592" y1="52" x2="630" y2="52" stroke="#C2643C" stroke-width="5" stroke-linecap="round"/>
+              <path class="donation-cane" d="M608 52 V30 A10 10 0 0 1 628 30 V35" fill="none" stroke="#2B2924" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line class="donation-laser-glow" x1="8" y1="52" x2="584" y2="52" stroke="#C2643C" stroke-width="9" stroke-linecap="round" filter="url(#donation-glow)"/>
+              <line class="donation-laser" x1="8" y1="52" x2="584" y2="52" stroke="#C2643C" stroke-width="5" stroke-linecap="round"/>
+              <g class="donation-tip" data-donation-tip>
+                <circle class="donation-tip-halo" cx="8" cy="52" r="6" fill="none" stroke="#C2643C" stroke-width="2" opacity="0"/>
+                <circle class="donation-tip-core" cx="8" cy="52" r="4" fill="#C2643C"/>
+              </g>
+            </svg>
+          </div>
+          <p class="donation-updated" data-donation-updated></p>
+        </div>
         <div class="btn-row reveal">
           <a class="btn btn-primary" href="https://buy.stripe.com/14A14p4TH4kAeeA4gY1VK00" target="_blank" rel="noopener">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7Z"/></svg>

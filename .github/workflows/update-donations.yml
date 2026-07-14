@@ -1,0 +1,71 @@
+name: Update donation total
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-donations
+  cancel-in-progress: false
+
+jobs:
+  update-total:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Sum successful charges from Stripe
+        env:
+          STRIPE_KEY: ${{ secrets.STRIPE_RESTRICTED_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${STRIPE_KEY}" ]; then
+            echo "STRIPE_RESTRICTED_KEY secret is not set." >&2
+            exit 1
+          fi
+          total=0
+          starting_after=""
+          while true; do
+            url="https://api.stripe.com/v1/charges?limit=100"
+            if [ -n "$starting_after" ]; then
+              url="${url}&starting_after=${starting_after}"
+            fi
+            response=$(curl --silent --show-error --user "${STRIPE_KEY}:" "$url")
+            if [ "$(echo "$response" | jq 'has("error")')" = "true" ]; then
+              echo "Stripe API error: $(echo "$response" | jq -r '.error.message')" >&2
+              exit 1
+            fi
+            page_sum=$(echo "$response" | jq '[.data[] | select(.paid == true and .status == "succeeded" and .currency == "gbp") | .amount - .amount_refunded] | add // 0')
+            total=$((total + page_sum))
+            if [ "$(echo "$response" | jq -r '.has_more')" != "true" ]; then
+              break
+            fi
+            starting_after=$(echo "$response" | jq -r '.data[-1].id')
+          done
+          echo "Total raised: ${total} pence"
+          echo "TOTAL_PENCE=${total}" >> "$GITHUB_ENV"
+
+      - name: Commit updated total if it changed
+        run: |
+          set -euo pipefail
+          current=$(jq '.total_pence' data/donations.json 2>/dev/null || echo "")
+          if [ "$current" = "$TOTAL_PENCE" ]; then
+            echo "Total unchanged (${TOTAL_PENCE} pence); nothing to commit."
+            exit 0
+          fi
+          mkdir -p data
+          jq --null-input \
+            --argjson total "$TOTAL_PENCE" \
+            --arg updated "$(date --utc +%Y-%m-%dT%H:%M:%SZ)" \
+            '{ total_pence: $total, goal_pence: 70000, currency: "gbp", updated: $updated }' \
+            > data/donations.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/donations.json
+          git commit -m "Update donation total to £$(awk "BEGIN { printf \"%.2f\", $TOTAL_PENCE / 100 }")"
+          git push
