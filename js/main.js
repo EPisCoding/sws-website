@@ -136,4 +136,127 @@
       play();
     }
   });
+
+  /* ---------- Donation progress tracker ---------- */
+
+  var tracker = document.querySelector("[data-donation-tracker]");
+  if (tracker && "fetch" in window) {
+    fetch("/data/donations.json", { cache: "no-cache" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        return response.json();
+      })
+      .then(function (data) {
+        var totalPence = Math.max(0, Math.round(Number(data.total_pence)) || 0);
+        var goalPence = Math.round(Number(data.goal_pence)) || 70000;
+        var pct = Math.min(100, (totalPence / goalPence) * 100);
+
+        var raisedEl = tracker.querySelector("[data-donation-raised]");
+        var goalEl = tracker.querySelector("[data-donation-goal]");
+        var updatedEl = tracker.querySelector("[data-donation-updated]");
+        var bar = tracker.querySelector("[data-donation-bar]");
+        var laser = tracker.querySelector(".donation-laser");
+        var glow = tracker.querySelector(".donation-laser-glow");
+        var tip = tracker.querySelector("[data-donation-tip]");
+
+        function formatPounds(pence) {
+          var pounds = pence / 100;
+          if (pence % 100 === 0) {
+            return "£" + Math.round(pounds).toLocaleString("en-GB");
+          }
+          return "£" + pounds.toLocaleString("en-GB", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
+        }
+
+        goalEl.textContent = "raised of " + formatPounds(goalPence);
+        bar.setAttribute("aria-valuemax", String(Math.round(goalPence / 100)));
+        bar.setAttribute("aria-valuenow", String(Math.round(totalPence / 100)));
+        bar.setAttribute("aria-valuetext",
+          formatPounds(totalPence) + " raised of " + formatPounds(goalPence));
+
+        if (updatedEl && data.updated) {
+          var when = new Date(data.updated);
+          if (!isNaN(when.getTime())) {
+            updatedEl.textContent = "Last updated " + when.toLocaleDateString("en-GB", {
+              day: "numeric", month: "long", year: "numeric"
+            }) + ". Donation totals refresh a few times a day.";
+          }
+        }
+
+        if (totalPence >= goalPence) {
+          tracker.classList.add("is-complete");
+        }
+        tracker.hidden = false;
+
+        // Laser geometry in SVG user units: the line runs from x=8 to x=584.
+        var LASER_LENGTH = 576;
+
+        function setFinalState() {
+          var offset = LASER_LENGTH * (1 - pct / 100);
+          laser.style.strokeDashoffset = offset;
+          glow.style.strokeDashoffset = offset;
+          tip.style.transform =
+            "translateX(" + (LASER_LENGTH * pct) / 100 + "px)";
+          if (pct > 0) {
+            tracker.classList.add("has-progress");
+          }
+          raisedEl.textContent = formatPounds(totalPence);
+        }
+
+        if (reducedMotion) {
+          setFinalState();
+          return;
+        }
+
+        var animated = false;
+        function animate() {
+          if (animated) return;
+          animated = true;
+
+          // Let the browser paint the resting state first so the
+          // stroke-dashoffset and transform transitions run from zero.
+          window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(setFinalState);
+          });
+
+          var DURATION = 1800;
+          var start = null;
+          function frame(now) {
+            if (start === null) start = now;
+            var t = Math.min(1, (now - start) / DURATION);
+            var eased = 1 - Math.pow(1 - t, 3);
+            if (t < 1) {
+              raisedEl.textContent =
+                "£" + Math.floor((totalPence / 100) * eased).toLocaleString("en-GB");
+              window.requestAnimationFrame(frame);
+            } else {
+              raisedEl.textContent = formatPounds(totalPence);
+            }
+          }
+          window.requestAnimationFrame(frame);
+        }
+
+        if ("IntersectionObserver" in window) {
+          var trackerObserver = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  animate();
+                  trackerObserver.disconnect();
+                }
+              });
+            },
+            { threshold: 0.4 }
+          );
+          trackerObserver.observe(tracker);
+        } else {
+          animate();
+        }
+      })
+      .catch(function () {
+        // Leave the tracker hidden; the Donate button still works.
+      });
+  }
 })();
