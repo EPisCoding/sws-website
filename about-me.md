@@ -43,7 +43,7 @@ I am now continuing this work as an **MRes at Swansea University**, supervised b
 
 **Engineering:** Mechanical design, electronics, assistive technology, medical devices
 
-**Other:** Investing and personal finance, space technology, entrepreneurship
+**Other:** Mountain walking and hiking, piano, space technology, entrepreneurship
 
 ---
 
