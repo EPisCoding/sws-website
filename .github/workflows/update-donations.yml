@@ -2,7 +2,7 @@ name: Update donation total
 
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "*/20 * * * *"
   workflow_dispatch:
 
 permissions:
