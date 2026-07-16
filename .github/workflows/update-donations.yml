@@ -72,10 +72,10 @@ jobs:
           ZEPTOMAIL_TOKEN: ${{ secrets.ZEPTOMAIL_TOKEN }}
           CHARGES_FILE: ${{ runner.temp }}/charges.json
           REPORT_FILE: ${{ runner.temp }}/thank-you-dry-run.md
-          # Master switch for automated sending. Stays "false" until Euan
-          # has approved the first dry-run batch; scheduled runs are
-          # dry-run-only while it is false.
-          SENDING_ENABLED: "false"
+          # Master switch for automated sending. Euan approved the first
+          # batch (8 donors) on 16 July 2026; scheduled runs now send to
+          # any new donor not yet in data/donors-emailed.json.
+          SENDING_ENABLED: "true"
           # One-off manual override used for the first approved batch send.
           SEND_EMAILS_INPUT: ${{ inputs.send_emails }}
         run: node scripts/send-thank-you-emails.mjs
