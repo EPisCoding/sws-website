@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "*/20 * * * *"
   workflow_dispatch:
+    inputs:
+      send_emails:
+        description: "Actually send thank-you emails (otherwise dry run unless SENDING_ENABLED is true)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -28,25 +33,8 @@ jobs:
             echo "STRIPE_RESTRICTED_KEY secret is not set." >&2
             exit 1
           fi
-          total=0
-          starting_after=""
-          while true; do
-            url="https://api.stripe.com/v1/charges?limit=100"
-            if [ -n "$starting_after" ]; then
-              url="${url}&starting_after=${starting_after}"
-            fi
-            response=$(curl --silent --show-error --user "${STRIPE_KEY}:" "$url")
-            if [ "$(echo "$response" | jq 'has("error")')" = "true" ]; then
-              echo "Stripe API error: $(echo "$response" | jq -r '.error.message')" >&2
-              exit 1
-            fi
-            page_sum=$(echo "$response" | jq '[.data[] | select(.paid == true and .status == "succeeded" and .currency == "gbp") | .amount - .amount_refunded] | add // 0')
-            total=$((total + page_sum))
-            if [ "$(echo "$response" | jq -r '.has_more')" != "true" ]; then
-              break
-            fi
-            starting_after=$(echo "$response" | jq -r '.data[-1].id')
-          done
+          bash scripts/fetch-charges.sh "$RUNNER_TEMP/charges.json"
+          total=$(jq '[.[] | .amount - .amount_refunded] | add // 0' "$RUNNER_TEMP/charges.json")
           echo "Total raised: ${total} pence"
           echo "TOTAL_PENCE=${total}" >> "$GITHUB_ENV"
 
@@ -68,6 +56,50 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/donations.json
           git commit -m "Update donation total to £$(awk "BEGIN { printf \"%.2f\", $TOTAL_PENCE / 100 }")"
+          for i in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push rejected, retrying with rebase (attempt $i)..."
+            git fetch origin master
+            git rebase origin/master || { git rebase --abort; exit 1; }
+          done
+          echo "Push failed after retries" >&2
+          exit 1
+
+      - name: Send thank-you emails to new donors
+        env:
+          ZEPTOMAIL_TOKEN: ${{ secrets.ZEPTOMAIL_TOKEN }}
+          CHARGES_FILE: ${{ runner.temp }}/charges.json
+          REPORT_FILE: ${{ runner.temp }}/thank-you-dry-run.md
+          # Master switch for automated sending. Stays "false" until Euan
+          # has approved the first dry-run batch; scheduled runs are
+          # dry-run-only while it is false.
+          SENDING_ENABLED: "false"
+          # One-off manual override used for the first approved batch send.
+          SEND_EMAILS_INPUT: ${{ inputs.send_emails }}
+        run: node scripts/send-thank-you-emails.mjs
+
+      - name: Upload dry-run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: thank-you-dry-run-report
+          path: ${{ runner.temp }}/thank-you-dry-run.md
+          if-no-files-found: ignore
+
+      - name: Commit updated email ledger
+        if: always()
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/donors-emailed.json; then
+            echo "Ledger unchanged; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/donors-emailed.json
+          git commit -m "Record thank-you emails sent"
           for i in 1 2 3 4 5; do
             if git push; then
               exit 0
