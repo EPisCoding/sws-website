@@ -58,6 +58,12 @@ const photoFiles = existsSync(PHOTO_DIR)
       .slice(-3)
   : [];
 
+// Basic title-casing for donor names ("stella aurakzai" -> "Stella
+// Aurakzai"). Known limitation: doesn't handle McDonald, O'Brien, etc.
+function titleCase(s) {
+  return s.replace(/(^|[\s-])(\p{L})/gu, (m, sep, letter) => sep + letter.toUpperCase());
+}
+
 function escapeHtml(s) {
   return String(s)
     .replaceAll("&", "&amp;")
@@ -133,7 +139,8 @@ let sampleEmail = null;
 
 for (const charge of pending) {
   const email = charge.billing_details?.email;
-  const name = charge.billing_details?.name?.trim() || "Friend of SWS";
+  const rawName = charge.billing_details?.name?.trim();
+  const name = rawName ? titleCase(rawName) : "Friend of SWS";
   const amountPence = charge.amount;
 
   // Don't thank a donation that was fully refunded.
