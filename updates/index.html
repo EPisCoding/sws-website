@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Updates | The Smart Walking Stick</title>
+  <meta name="description" content="Progress updates from Euan on the Smart Walking Stick, an assistive technology project for people with Parkinson's disease.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Progress Updates | The Smart Walking Stick">
+  <meta property="og:description" content="Progress updates from Euan on the Smart Walking Stick, an assistive technology project for people with Parkinson's disease.">
+  <meta property="og:image" content="https://www.smartwalkingstick.co.uk/images/grandad.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://www.smartwalkingstick.co.uk/updates/">
+  <link rel="canonical" href="https://www.smartwalkingstick.co.uk/updates/">
+  <meta name="theme-color" content="#FAF7F2">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="/">Smart <span>Walking Stick</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        <span>Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/why/">The Story</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/future-plans/">Future Plans</a>
+        <a href="/updates/" aria-current="page">Updates</a>
+        <a href="/about/">About Me</a>
+        <a class="btn btn-primary nav-donate" href="https://buy.stripe.com/14A14p4TH4kAeeA4gY1VK00" target="_blank" rel="noopener">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Updates</span>
+        <h1>Progress updates</h1>
+        <p class="lede">Following along with the Smart Walking Stick as it develops, from prototyping to clinical research.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="updates-list"></div>
+      </div>
+    </section>
+
+    <script>
+    fetch('/content/updates.json').then(r=>r.json()).then(posts=>{
+      const el=document.getElementById('updates-list');
+      el.innerHTML=posts.map(p=>{
+        const imgs=(p.photos||[]).map(f=>'<img src="/assets/donor-updates/'+encodeURIComponent(f)+'" alt="" style="display:block;width:100%;max-width:560px;height:auto;border-radius:8px;margin:12px 0;">').join('');
+        const d=new Date(p.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+        return '<article style="margin:0 0 40px;"><p style="opacity:.7;margin:0 0 4px;">'+d+'</p><h2>'+p.title+'</h2><p>'+p.body+'</p>'+imgs+'</article>';
+      }).join('');
+    }).catch(()=>{document.getElementById('updates-list').textContent='Updates coming soon.';});
+    </script>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">The Smart Walking Stick</p>
+          <p>An assistive technology project helping people with Parkinson's disease overcome Freezing of Gait. Built by Euan, continuing as an MRes at Swansea University.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="/why/">The Story</a></li>
+            <li><a href="/how-it-works/">How It Works</a></li>
+            <li><a href="/future-plans/">Future Plans</a></li>
+            <li><a href="/updates/">Updates</a></li>
+            <li><a href="/about/">About Me</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:hello@smartwalkingstick.co.uk">hello@smartwalkingstick.co.uk</a></li>
+            <li><a href="https://github.com/EPisCoding">GitHub: EPisCoding</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">The Smart Walking Stick, a project by Euan. Started with one person in mind, built for many more.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
