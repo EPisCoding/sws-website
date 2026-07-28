@@ -1,0 +1,45 @@
+name: Send update email to all donors
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type SEND (in capitals) to actually email every donor. Anything else = dry run.'
+        type: string
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: send-update
+  cancel-in-progress: false
+
+jobs:
+  broadcast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Fetch successful charges from Stripe
+        env:
+          STRIPE_KEY: ${{ secrets.STRIPE_RESTRICTED_KEY }}
+        run: bash scripts/fetch-charges.sh "$RUNNER_TEMP/charges.json"
+
+      - name: Broadcast the current update
+        env:
+          ZEPTOMAIL_TOKEN: ${{ secrets.ZEPTOMAIL_TOKEN }}
+          CHARGES_FILE: ${{ runner.temp }}/charges.json
+          REPORT_FILE: ${{ runner.temp }}/broadcast-dry-run.md
+          CONFIRM_BROADCAST: ${{ inputs.confirm }}
+        run: node scripts/send-update-broadcast.mjs
+
+      - name: Upload dry-run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: broadcast-dry-run-report
+          path: ${{ runner.temp }}/broadcast-dry-run.md
+          if-no-files-found: ignore
