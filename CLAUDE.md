@@ -10,22 +10,15 @@ automatically from `master` — every push is live within ~1 minute. No build st
    `2026-08-03-handle-test.jpeg`), and reference those filenames in `photos`.
 3. Commit both. The `/updates/` page renders them client-side.
 
-## To refresh the update that donors receive
-- Edit `content/current-update.md` (one short paragraph). New donors' automatic
-  thank-you emails, and any broadcast, use whatever is in this file at send time.
-- Drop the latest photos in `assets/donor-updates/`; the newest 3 (by filename) are
-  used in emails.
-
-## To email ALL past donors an update (on demand)
-1. Make sure `content/current-update.md` and the photos are current (steps above).
-2. GitHub → Actions → "Send update email to all donors" → Run workflow.
-   - Leave `confirm` blank → DRY RUN: download the report artifact, check who it would
-     email and the sample email.
-   - Type `SEND` (capitals) → actually emails every donor, once each.
-   This is separate from the automatic per-new-donor thank-you (that one is
-   `.github/workflows/update-donations.yml`, runs every 20 min, do not disturb it).
+## Automation
+- `.github/workflows/update-donations.yml` is the only workflow in this repo. It
+  runs every 20 minutes, fetches successful charges from Stripe, and commits the
+  updated total to `data/donations.json`, which feeds the site's donation tracker.
 
 ## Do not touch
-- `data/donors-emailed.json` (thank-you dedupe ledger — the broadcast never uses it)
 - The donation-total step in `update-donations.yml`
-- Secrets: `STRIPE_RESTRICTED_KEY`, `ZEPTOMAIL_TOKEN`
+- Secret: `STRIPE_RESTRICTED_KEY`
+
+## Note
+The donor thank-you/broadcast email system was removed (2026-09-05) and is being
+rebuilt from scratch.
