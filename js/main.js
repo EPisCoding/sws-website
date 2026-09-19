@@ -27,6 +27,15 @@
       navToggle.setAttribute("aria-expanded", String(open));
     });
 
+    // Close the mobile menu after following a link, so in-page anchors
+    // such as #contact are not left covered by the open menu.
+    nav.addEventListener("click", function (event) {
+      if (event.target.closest("a") && nav.classList.contains("is-open")) {
+        nav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && nav.classList.contains("is-open")) {
         nav.classList.remove("is-open");
