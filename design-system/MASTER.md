@@ -8,31 +8,31 @@ Global source of truth for the SWS website. Every page and component follows the
 
 ## 1. Colour Palette
 
-Warm paper neutrals with a deep slate-blue primary and a terracotta warmth accent. Evolved from the existing site so the identity stays recognisable. All ratios below are computed WCAG contrast ratios.
+Cool clinical neutrals with a deep navy primary and a green accent taken from the device's laser cue. Evolved from the existing site so the identity stays recognisable. All ratios below are computed WCAG contrast ratios.
 
 ### Core tokens
 
 | Token | Hex | Role |
 |---|---|---|
-| `--color-bg` | `#FAF7F2` | Page background (warm paper) |
-| `--color-bg-alt` | `#F3EDE2` | Alternate section background (sand) |
+| `--color-bg` | `#FFFFFF` | Page background |
+| `--color-bg-alt` | `#F4F6F8` | Alternate section background (cool grey) |
 | `--color-surface` | `#FFFFFF` | Cards, panels, header |
-| `--color-ink` | `#2B2924` | Primary text (13.6:1 on bg) |
-| `--color-ink-soft` | `#5C574D` | Secondary text (6.7:1 on bg) |
-| `--color-ink-faint` | `#6E675C` | Captions, metadata (5.2:1 on bg, min size 0.85rem) |
-| `--color-primary` | `#33608C` | Links, primary buttons, active states (6.2:1 on bg) |
-| `--color-primary-deep` | `#274A6D` | Hover/pressed, emphasis (8.6:1 on bg) |
-| `--color-accent` | `#C2643C` | Terracotta warmth. LARGE text (18px+ bold / 24px+), graphics and decorative use ONLY (4.05:1) |
-| `--color-accent-text` | `#9C4A26` | Terracotta at body-text size (5.7:1 on bg) |
-| `--color-line` | `#E7E0D4` | Borders, dividers |
-| `--color-footer-bg` | `#2B2924` | Dark footer; text `#FAF7F2` (13.6:1) |
-| `--color-focus` | `#33608C` | Focus rings |
+| `--color-ink` | `#0F1C28` | Primary text (17.3:1 on bg) |
+| `--color-ink-soft` | `#44566A` | Secondary text (7.5:1 on bg) |
+| `--color-ink-faint` | `#5B6B7C` | Captions, metadata (5.5:1 on bg, min size 0.85rem) |
+| `--color-primary` | `#0B5578` | Links, primary buttons, active states (8.1:1 on bg) |
+| `--color-primary-deep` | `#073D57` | Hover/pressed, emphasis (11.6:1 on bg) |
+| `--color-accent` | `#22C07A` | Green accent. Graphics and dark grounds ONLY (2.4:1 on white) |
+| `--color-accent-text` | `#0F7A4A` | Green at body-text size (5.4:1 on bg) |
+| `--color-line` | `#DDE3E9` | Borders, dividers |
+| `--color-footer-bg` | `#0F1C28` | Dark footer; text `#F4F6F8` (15.9:1) |
+| `--color-focus` | `#0B5578` | Focus rings |
 | `--color-error` | `#B3261E` | Form errors (with icon or text, never colour alone) |
 
 ### Usage rules
-- Never place `--color-accent` (#C2643C) as normal-size body text; use `--color-accent-text` instead.
-- Text on `--color-primary` fills is always white (6.6:1). Text on `--color-primary-deep` fills is white (9.2:1).
-- No pure black, no neon, no purple/pink gradients. Gradients limited to background washes between two adjacent neutrals (e.g. sand to paper) at low intensity.
+- Never place `--color-accent` (#22C07A) as body-size text on a light background (2.4:1 on white); it is for graphics and dark grounds only. Use `--color-accent-text` instead.
+- Text on `--color-primary` fills is always white (8.1:1). Text on `--color-primary-deep` fills is white (11.6:1).
+- No pure black, no neon, no purple/pink gradients. Gradients limited to background washes between two adjacent neutrals (e.g. cool grey `--color-bg-alt` to white `--color-bg`) at low intensity.
 - Semantic tokens only in components; raw hex lives only in the `:root` block.
 
 ## 2. Typography
@@ -56,7 +56,7 @@ Load via Google Fonts with `display=swap`, preconnect, and only the weights list
 | `--text-body-lg` | `1.15rem` | Ledes, intro paragraphs |
 | `--text-body` | `1.0625rem` (17px) | Body copy |
 | `--text-small` | `0.9rem` | Captions, footnotes |
-| `--text-label` | `0.8rem` | Uppercase labels, badges |
+| `--text-label` | `0.85rem` | Uppercase labels, badges |
 
 ### Rules
 - Body line-height 1.7; headings 1.15-1.25.
@@ -90,11 +90,11 @@ Warm-tinted, low-opacity shadows only. Exactly three levels, never mixed arbitra
 
 | Token | Value | Use |
 |---|---|---|
-| `--shadow-1` | `0 1px 3px rgba(43,41,36,0.06), 0 1px 2px rgba(43,41,36,0.04)` | Resting cards |
-| `--shadow-2` | `0 4px 14px rgba(43,41,36,0.08)` | Hover, sticky header |
-| `--shadow-3` | `0 12px 32px rgba(43,41,36,0.12)` | Modals, lightbox only |
+| `--shadow-1` | `0 1px 3px rgba(15,28,40,0.07), 0 1px 2px rgba(15,28,40,0.05)` | Resting cards |
+| `--shadow-2` | `0 4px 14px rgba(15,28,40,0.09)` | Hover, sticky header |
+| `--shadow-3` | `0 12px 32px rgba(15,28,40,0.13)` | Modals, lightbox only |
 
-Cards pair `--shadow-1` with a `1px solid var(--color-line)` border. Never shadow without border on the paper background.
+Cards pair `--shadow-1` with a `1px solid var(--color-line)` border. Never shadow without border on the white background.
 
 ## 6. Iconography
 
@@ -136,7 +136,7 @@ States: hover darkens to `--color-primary-deep` and lifts to `--shadow-2` (trans
 
 - Sticky header, white surface, 1px bottom border; `--shadow-2` appears after scrolling past 8px.
 - Brand: Fraunces wordmark, links home.
-- Desktop: inline nav links, `--color-ink-soft`, active page marked by 2px terracotta underline plus `aria-current="page"`.
+- Desktop: inline nav links, `--color-ink-soft`, active page marked by 2px green underline plus `aria-current="page"`.
 - Mobile (<768px): disclosure button ("Menu", hamburger icon + label) toggling a vertical panel; button has `aria-expanded`; panel links min-height 44px; Escape closes.
 - Donate button: a filled primary pill (`.nav-donate`) at the end of the nav on every page, linking to Stripe checkout in a new tab (`rel="noopener"`). This is the one sanctioned exception to the one-primary-CTA rule, since the header persists across views. On mobile it sits full-width at the bottom of the nav panel.
 - Skip link ("Skip to main content") as first focusable element, visible on focus.
@@ -180,7 +180,7 @@ Rules:
 ## 15. Tone of Imagery
 
 - Real photographs of real moments: the grandad photo and the Parkinson's UK demonstration are the emotional anchors of the site; present them large, honestly captioned, never cropped into marketing shapes.
-- Technical illustration: clean line-based SVG diagrams in the palette colours (primary blue strokes, terracotta highlights, paper background).
+- Technical illustration: clean line-based SVG diagrams in the palette colours (primary blue strokes, green highlights, white background).
 - No stock photography, no AI-generated people, no glossy product renders.
 - Photos sit in figure cards (`--radius-md`, border, `--shadow-1`) with visible captions in `--color-ink-faint`.
 - Serve WebP with PNG fallback via `<picture>`; explicit width/height to prevent layout shift; `loading="lazy"` below the fold.
@@ -188,10 +188,10 @@ Rules:
 ## 16. Component Usage Rules
 
 1. One primary CTA per page view; everything else secondary or quiet.
-2. Section label pattern: uppercase Inter label in terracotta (`--color-accent-text`) above the Fraunces heading; use consistently on all major sections.
-3. Stat/fact chips (e.g. "60-140 BPM", "3 cueing modes") use the pill badge: sand background, ink text, `--radius-full`.
-4. "Implemented" vs "Future" distinction: future-work sections carry a visible "Future research" or "Planned" badge (outline pill, terracotta text) so plans are never mistaken for shipped features.
-5. Timeline component for project progress: vertical line, terracotta dots, date labels in the technical label style.
+2. Section label pattern: uppercase Inter label in `--color-ink-faint` above the Fraunces heading; use consistently on all major sections. `--color-accent-text` (green) is reserved for the homepage hero eyebrow only.
+3. Stat/fact chips (e.g. "60-140 BPM", "3 cueing modes") use the pill badge: `--color-bg-alt` (cool grey) background, ink text, `--radius-full`.
+4. "Implemented" vs "Future" distinction: future-work sections carry a visible "Future research" or "Planned" badge (outline pill, green `--color-accent-text` text) so plans are never mistaken for shipped features.
+5. Timeline component for project progress: vertical line, green `--color-accent` dots, date labels in the technical label style.
 6. Figures always include a caption; captions state what the reader is looking at, not marketing copy.
 7. Prose pages keep the 42rem measure; full-width breakouts allowed only for figures, the timeline, card grids and the cueing demo.
 8. Every page ends with the same quiet contact band (not a hard sell): short sentence + email + GitHub.
