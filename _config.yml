@@ -1,0 +1,7 @@
+exclude:
+  - CLAUDE.md
+  - README.md
+  - design-system/
+  - scripts/
+  - data/donors-emailed.json
+  - content/

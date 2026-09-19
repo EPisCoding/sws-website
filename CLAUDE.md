@@ -3,12 +3,22 @@
 Static site on GitHub Pages, custom domain www.smartwalkingstick.co.uk. Deploys
 automatically from `master` — every push is live within ~1 minute. No build step.
 
-## To post a website update (phone-friendly)
-1. Add a new object to the TOP of `content/updates.json`:
-   `{ "date":"YYYY-MM-DD", "title":"...", "body":"...", "photos":["<filename>"] }`
-2. Put any photos in `assets/donor-updates/` first (date-prefixed filenames, e.g.
-   `2026-08-03-handle-test.jpeg`), and reference those filenames in `photos`.
-3. Commit both. The `/updates/` page renders them client-side.
+## Project updates
+- The current update is a single file, `content/current-update.md`, overwritten
+  each time. There is no updates page and no update photo folder.
+- It is NOT published: `content/` is excluded in `_config.yml`, and no page reads
+  it. It was the source for the donor email broadcast, which was removed.
+  To show an update on the site, edit the relevant page's `index.html` directly.
+
+## Do not publish
+The project owns background IP and is taking IP advice. Public pages describe
+function at a high level only:
+- No component or part names, part numbers or board names.
+- No design-tool names (CAD or PCB software).
+- No CAD screenshots or photos of internal electronics.
+- `_config.yml` controls what GitHub Pages (Jekyll) publishes. Every file in the
+  repo is public by default, including `.md` files, unless it is listed under
+  `exclude:` there. Add internal files to that list before committing them.
 
 ## Automation
 - `.github/workflows/update-donations.yml` is the only workflow in this repo. It

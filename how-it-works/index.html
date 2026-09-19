@@ -154,7 +154,7 @@
         <div class="section-head reveal">
           <span class="eyebrow">The companion app</span>
           <h2>Control from a phone, wirelessly</h2>
-          <p>All three cueing modalities are controlled through a companion Android application, developed using React Native and Expo. The app connects to the stick over Bluetooth Low Energy.</p>
+          <p>All three cueing modalities are controlled through a companion Android application, built as a cross-platform mobile app. The app connects to the stick over Bluetooth Low Energy.</p>
         </div>
         <div class="card-grid">
           <div class="card reveal">
@@ -175,7 +175,7 @@
           <div class="card reveal" style="--reveal-delay: 120ms">
             <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
             <h3>Live gait graph</h3>
-            <p>Real-time visualisation of accelerometer data from the motion sensor built into the stick.</p>
+            <p>Real-time visualisation of movement data from the stick.</p>
           </div>
           <div class="card reveal" style="--reveal-delay: 160ms">
             <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
@@ -194,47 +194,10 @@
     <!-- ============ Hardware ============ -->
     <section class="section section-alt">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="prose reveal">
           <span class="eyebrow">The hardware</span>
-          <h2>What's inside the stick</h2>
-          <p>At the core is a Raspberry Pi Zero 2W, programmed in Python and housed in a custom 3D-printed enclosure mounted to the walking stick.</p>
-        </div>
-        <div class="bento">
-          <div class="bento-tile bento-wide reveal">
-            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2"/><path d="M15 2v2"/><path d="M9 20v2"/><path d="M15 20v2"/><path d="M2 9h2"/><path d="M2 15h2"/><path d="M20 9h2"/><path d="M20 15h2"/></svg></span>
-            <h3>Raspberry Pi Zero 2W</h3>
-            <p>The brain of the device: it runs the cueing logic in Python, streams sensor data, and talks to the app over Bluetooth Low Energy. Housed in a custom 3D-printed enclosure on the stick.</p>
-          </div>
-          <div class="bento-tile reveal" style="--reveal-delay: 60ms">
-            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
-            <h3>MPU6050 IMU</h3>
-            <p>A six-axis inertial measurement unit capturing real-time accelerometer and gyroscope data.</p>
-          </div>
-          <div class="bento-tile reveal" style="--reveal-delay: 120ms">
-            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span>
-            <h3>Amplifier and speaker</h3>
-            <p>A MAX98357A I2S amplifier driving a 3W speaker for the audio cueing beat.</p>
-          </div>
-          <div class="bento-tile reveal" style="--reveal-delay: 180ms">
-            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8 2 2-2 2 2 2-2 2"/><path d="m22 8-2 2 2 2-2 2 2 2"/><rect x="8" y="5" width="8" height="14" rx="1"/></svg></span>
-            <h3>Coin vibration motor</h3>
-            <p>Delivers the haptic pulses felt through the handle, synchronised with the beat.</p>
-          </div>
-          <div class="bento-tile reveal" style="--reveal-delay: 240ms">
-            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v6"/><path d="m8 21 4-11 4 11"/><path d="M6 21h12"/></svg></span>
-            <h3>Laser module</h3>
-            <p>Projects the visual cueing line onto the floor ahead of the user.</p>
-          </div>
-          <div class="bento-tile reveal" style="--reveal-delay: 300ms">
-            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="11" x2="6" y2="13"/></svg></span>
-            <h3>UPS HAT power</h3>
-            <p>Stable, battery-backed 5V power so the stick works completely untethered.</p>
-          </div>
-          <div class="bento-tile bento-wide reveal" style="--reveal-delay: 360ms">
-            <span class="icon-tile" aria-hidden="true"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M11 9h4a2 2 0 0 0 2-2V3"/><circle cx="9" cy="9" r="2"/><path d="M7 21v-4a2 2 0 0 1 2-2h4"/><circle cx="15" cy="15" r="2"/></svg></span>
-            <h3>Custom PCB</h3>
-            <p>A compact printed circuit board designed in EasyEDA to replace the breadboard prototype, consolidating every connection onto a single board that sits directly on the Pi's GPIO header.</p>
-          </div>
+          <h2 style="margin-top: 0">What's inside</h2>
+          <p>The stick carries its own processor, motion sensing, a speaker, a vibration motor and a laser, powered by an internal rechargeable battery so it works untethered. Everything sits in a custom enclosure mounted to a standard walking stick, with a purpose-designed circuit board replacing the original prototype wiring.</p>
         </div>
       </div>
     </section>
@@ -245,7 +208,7 @@
         <div class="prose reveal">
           <span class="eyebrow">Next iteration</span>
           <h2 style="margin-top: 0">Prototype 2 <span class="badge-future">In development</span></h2>
-          <p>The second prototype moves away from the Raspberry Pi to an <strong>ESP32 microcontroller</strong>, reducing size, cost and power consumption. It also introduces <strong>physical buttons directly on the stick</strong>, allowing users to toggle cueing without needing their phone, making the device more accessible and independent for everyday use.</p>
+          <p>The second prototype moves to a smaller, lower-power processor, and adds physical buttons on the handle so the stick works without a phone at all.</p>
           <p><a class="btn-quiet" href="/future-plans/">Read the full roadmap
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></p>
         </div>
