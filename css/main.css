@@ -914,6 +914,13 @@ figure.photo.photo-centred {
   }
 }
 
+/* Source citation beneath a section */
+.source-note {
+  font-size: var(--text-small);
+  color: var(--color-ink-faint);
+  max-width: 42rem;
+}
+
 /* ---------- Pull quote ---------- */
 
 .pullquote {
