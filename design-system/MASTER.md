@@ -106,6 +106,7 @@ Cards pair `--shadow-1` with a `1px solid var(--color-line)` border. Never shado
 ## 7. Grid System
 
 - Content container: `max-width: 1080px`, padding-inline `--space-5` (mobile) to `--space-6` (desktop).
+- Section padding steps with width: `--space-7` below 768px, `--space-8` from 768px, `--space-9` from 768px up on `.section`. Phones get one step less so pages do not become a long scroll of empty bands.
 - Prose container: `max-width: 42rem`, centred.
 - Card grids: CSS Grid, `repeat(auto-fit, minmax(240px, 1fr))`, gap `--space-5`.
 - Two-column story layouts (text + image): 7/5 split at ≥900px, stacked below.
@@ -188,12 +189,12 @@ Rules:
 ## 16. Component Usage Rules
 
 1. One primary CTA per page view; everything else secondary or quiet.
-2. Section label pattern: uppercase Inter label in `--color-ink-faint` above the Fraunces heading; use consistently on all major sections. `--color-accent-text` (green) is reserved for the homepage hero eyebrow only.
+2. Section label pattern: uppercase Inter label in `--color-ink-faint` above the Fraunces heading; use consistently on all major sections. `--color-accent-text` (green) is reserved for the homepage hero eyebrow, which is the only green eyebrow on the site. Two sections carry no eyebrow at all: the contact band (its heading "Get in touch" already says it) and the page hero on `/how-it-works/` (the nav label, title and h1 already name the page).
 3. Stat/fact chips (e.g. "60-140 BPM", "3 cueing modes") use the pill badge: `--color-bg-alt` (cool grey) background, ink text, `--radius-full`.
 4. "Implemented" vs "Future" distinction: future-work sections carry a visible "Future research" or "Planned" badge (outline pill, green `--color-accent-text` text) so plans are never mistaken for shipped features.
 5. Timeline component for project progress: vertical line, green `--color-accent` dots, date labels in the technical label style.
 6. Figures always include a caption; captions state what the reader is looking at, not marketing copy.
 7. Prose pages keep the 42rem measure; full-width breakouts allowed only for figures, the timeline, card grids and the cueing demo.
-8. Every page ends with the same quiet contact band (not a hard sell): short sentence + email.
+8. Every page ends with the same quiet contact band (not a hard sell): short sentence + email. It carries no eyebrow.
 9. Consistent head block on every page: unique `<title>` ("Page — The Smart Walking Stick"), unique meta description, Open Graph title/description/image. Pages live in folders for clean URLs (`/why/`, `/about/`); internal links and asset paths are root-relative (`/css/main.css`); canonical and OG URLs are absolute on `https://www.smartwalkingstick.co.uk/`. Old flat `.html` paths keep meta-refresh redirect stubs.
 10. Shared CSS in one `css/main.css` (tokens + components + page sections); shared behaviour in one `js/main.js` (nav toggle, scroll reveal, demo controls). No frameworks, no build step.
