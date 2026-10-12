@@ -648,6 +648,49 @@ h3,
   }
 }
 
+/* Below the 7/5 split, the photo sits between the h1 and the lede.
+   The text wrapper becomes display: contents so its children and the
+   figure share one grid and can be ordered. */
+@media (max-width: 899px) {
+  .home-hero-grid {
+    gap: 0;
+  }
+
+  .home-hero-grid > div:first-child {
+    display: contents;
+  }
+
+  .home-hero .eyebrow {
+    order: 1;
+  }
+
+  .home-hero h1 {
+    order: 2;
+  }
+
+  .home-hero .hero-figure {
+    order: 3;
+    margin-bottom: var(--space-6);
+  }
+
+  .home-hero .lede {
+    order: 4;
+  }
+
+  .home-hero .hero-status {
+    order: 5;
+    justify-self: start;
+  }
+
+  .home-hero .pill-row {
+    order: 6;
+  }
+
+  .home-hero .btn-row {
+    order: 7;
+  }
+}
+
 .hero-figure img {
   border-radius: var(--radius-md);
   width: 100%;
