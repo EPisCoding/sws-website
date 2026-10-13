@@ -4,11 +4,6 @@ on:
   schedule:
     - cron: "*/20 * * * *"
   workflow_dispatch:
-    inputs:
-      send_emails:
-        description: "Actually send thank-you emails (otherwise dry run unless SENDING_ENABLED is true)"
-        type: boolean
-        default: false
 
 permissions:
   contents: write
