@@ -1,2 +1,5 @@
 # Local Claude Code settings and skills
 .claude/
+
+# Old donor email ledger (Stripe charge IDs). Purged from history; never re-add.
+data/donors-emailed.json
