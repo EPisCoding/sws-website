@@ -367,6 +367,7 @@ h3,
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  min-width: 44px;
   color: var(--color-ink-soft);
   font-size: 0.95rem;
   font-weight: 500;
@@ -624,6 +625,10 @@ h3,
   margin-bottom: var(--space-6);
 }
 
+.hero-register {
+  margin-bottom: var(--space-4);
+}
+
 .hero-figure {
   position: relative;
   max-width: 360px;
@@ -682,12 +687,16 @@ h3,
     justify-self: start;
   }
 
-  .home-hero .pill-row {
+  .home-hero .hero-register {
     order: 6;
   }
 
-  .home-hero .btn-row {
+  .home-hero .pill-row {
     order: 7;
+  }
+
+  .home-hero .btn-row {
+    order: 8;
   }
 }
 
@@ -1383,13 +1392,17 @@ figure.photo.photo-centred {
   padding: 0;
 }
 
-.site-footer li {
-  margin-bottom: var(--space-2);
-}
-
 .site-footer a {
   color: #F4F6F8;
   text-decoration: none;
+}
+
+/* Footer list links meet the 44px touch target */
+.site-footer li a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .site-footer a:hover {
