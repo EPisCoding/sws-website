@@ -179,11 +179,16 @@
           });
         }
 
-        goalEl.textContent = "raised of " + formatPounds(goalPence);
+        var reached = totalPence >= goalPence;
+        goalEl.textContent = reached
+          ? "raised. " + formatPounds(goalPence) + " target reached."
+          : "raised of " + formatPounds(goalPence);
+        // aria-valuenow must not exceed aria-valuemax; valuetext carries the real total.
         bar.setAttribute("aria-valuemax", String(Math.round(goalPence / 100)));
-        bar.setAttribute("aria-valuenow", String(Math.round(totalPence / 100)));
-        bar.setAttribute("aria-valuetext",
-          formatPounds(totalPence) + " raised of " + formatPounds(goalPence));
+        bar.setAttribute("aria-valuenow", String(Math.round(Math.min(totalPence, goalPence) / 100)));
+        bar.setAttribute("aria-valuetext", reached
+          ? formatPounds(totalPence) + " raised. The " + formatPounds(goalPence) + " target has been reached."
+          : formatPounds(totalPence) + " raised of " + formatPounds(goalPence));
 
         if (updatedEl && data.updated) {
           var when = new Date(data.updated);
@@ -194,7 +199,7 @@
           }
         }
 
-        if (totalPence >= goalPence) {
+        if (reached) {
           tracker.classList.add("is-complete");
         }
         tracker.hidden = false;
