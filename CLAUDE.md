@@ -41,8 +41,12 @@ function at a high level only:
 
 ## Personal data
 - This site stores no personal data and must stay that way.
-- Register interest is an external link to a hosted sign-up form. No embeds,
+- Register interest links go to `/register/`: a plain HTML form that posts
+  straight to Zoho Campaigns (double opt-in). No Zoho JavaScript, embeds,
   iframes, tracking pixels or third-party scripts on our pages.
+- The form's hidden fields identify our Zoho form and list. If the form is
+  edited or recreated in Zoho, re-copy them and re-test a sign-up with the
+  owner's own email. Never commit Zoho's embed code file.
 - Never commit sign-up lists, emails, donor details or exports of any kind.
 - `data/donations.json` must only ever contain aggregate totals.
 

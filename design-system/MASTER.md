@@ -146,7 +146,7 @@ States: hover darkens to `--color-primary-deep` and lifts to `--shadow-2` (trans
 ## 12. Forms (contact and future use)
 
 - Visible `<label>` above every field, never placeholder-only.
-- Inputs: white surface, 1px `--color-line` border, `--radius-sm`, padding 0.75rem 1rem, min-height 44px; focus shows the standard focus ring.
+- Inputs: white surface, 1px `--color-ink-faint` border (`--color-line` is too faint for the 3:1 non-text contrast minimum), `--radius-sm`, padding 0.75rem 1rem, min-height 48px, text 1.125rem; focus shows the standard focus ring.
 - Errors: `--color-error` text plus warning icon below the field, `role="alert"`; message states cause and fix.
 - The contact route is a plain `mailto:` link presented as a card, not a lead-gen form. No required marketing fields, ever.
 

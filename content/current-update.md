@@ -34,6 +34,6 @@ My grandad has been part of it from the start, trying out each version and telli
 
 Not yet. The Smart Walking Stick is a research prototype and is not available to buy. If you'd like to hear how it develops, sign up for occasional updates.
 
-[Button: "Register interest" → https://zcmp.eu/zPOj]
+[Button: "Register interest" → /register/]
 
 We'll send occasional updates. We'll never share your details. [Link: privacy note]

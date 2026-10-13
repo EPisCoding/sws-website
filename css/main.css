@@ -503,6 +503,53 @@ h3,
   color: var(--color-ink-faint);
 }
 
+/* ---------- Sign-up form ---------- */
+
+.page-logo {
+  display: block;
+  margin-bottom: var(--space-5);
+}
+
+.signup-form {
+  max-width: 32rem;
+  font-size: 1.125rem;
+}
+
+.form-field {
+  margin-bottom: var(--space-5);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+/* Border uses --color-ink-faint, not --color-line, so the field edge
+   meets the 3:1 non-text contrast minimum. */
+.form-input {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  font: 400 1.125rem var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid var(--color-ink-faint);
+  border-radius: var(--radius-sm);
+}
+
+.signup-form .btn {
+  min-height: 48px;
+  font-size: 1.125rem;
+}
+
+.signup-note {
+  margin-block: var(--space-4);
+  color: var(--color-ink-soft);
+}
+
 /* ---------- Pills and badges ---------- */
 
 .pill {
