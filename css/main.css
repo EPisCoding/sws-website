@@ -550,6 +550,24 @@ h3,
   color: var(--color-ink-soft);
 }
 
+.signup-error {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  margin-block: var(--space-4);
+  font-weight: 500;
+  color: var(--color-error);
+}
+
+.signup-error[hidden] {
+  display: none;
+}
+
+.signup-error .icon {
+  flex: none;
+  margin-top: 0.2em;
+}
+
 /* ---------- Pills and badges ---------- */
 
 .pill {

@@ -146,6 +146,84 @@
     }
   });
 
+  /* ---------- Sign-up form ---------- */
+
+  // Sends the plain Zoho form in the background so visitors land on our own
+  // /register/thanks/ page. Without JS the form still posts to Zoho directly.
+  // Never log Zoho's reply: it contains the visitor's email address.
+  var signupForm = document.querySelector("[data-signup-form]");
+  if (signupForm && "fetch" in window && "URLSearchParams" in window && "FormData" in window) {
+    var signupButton = signupForm.querySelector("button[type=submit]");
+    var signupError = signupForm.querySelector("[data-signup-error]");
+    var signupEmail = signupForm.querySelector("[name=CONTACT_EMAIL]");
+    var signupLabel = signupButton.textContent;
+    var signupBusy = false;
+
+    // Zoho replies with JSON, or JSON wrapped in HTML between markers.
+    function parseZohoReply(text) {
+      var start = text.indexOf("##ZCJSONSTART##");
+      var end = text.indexOf("##ZCJSON##</div>");
+      if (start > -1 && end > start) {
+        text = text.substring(start + 15, end);
+      }
+      try {
+        return JSON.parse(text);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function showSignupError() {
+      signupBusy = false;
+      signupButton.disabled = false;
+      signupButton.removeAttribute("aria-busy");
+      signupButton.textContent = signupLabel;
+      signupError.hidden = false;
+      signupEmail.focus();
+    }
+
+    signupForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (signupBusy) return;
+      signupBusy = true;
+      signupError.hidden = true;
+      signupButton.disabled = true;
+      signupButton.setAttribute("aria-busy", "true");
+      signupButton.textContent = "Signing up…";
+
+      var body = new URLSearchParams(new FormData(signupForm));
+      body.append("responseMode", "inline");
+
+      var controller = "AbortController" in window ? new AbortController() : null;
+      var timeout = controller ? window.setTimeout(function () { controller.abort(); }, 15000) : null;
+
+      fetch(signupForm.action, {
+        method: "POST",
+        body: body,
+        mode: "cors",
+        credentials: "omit",
+        signal: controller ? controller.signal : undefined
+      })
+        .then(function (response) {
+          return response.text().then(function (text) {
+            window.clearTimeout(timeout);
+            var reply = response.ok ? parseZohoReply(text) : null;
+            if (reply && (reply.responseType === "ZC_TYPEJSON" || text.indexOf("ZC_TYPE_2_JSON") > -1)) {
+              window.location.assign("/register/thanks/");
+            } else {
+              showSignupError();
+            }
+          });
+        })
+        .catch(function () {
+          // Network error, blocked cross-origin read or timeout: we cannot
+          // tell what happened, so fall back to the plain form post.
+          window.clearTimeout(timeout);
+          HTMLFormElement.prototype.submit.call(signupForm);
+        });
+    });
+  }
+
   /* ---------- Donation progress tracker ---------- */
 
   var tracker = document.querySelector("[data-donation-tracker]");

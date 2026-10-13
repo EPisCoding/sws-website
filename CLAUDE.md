@@ -47,6 +47,15 @@ function at a high level only:
 - The form's hidden fields identify our Zoho form and list. If the form is
   edited or recreated in Zoho, re-copy them and re-test a sign-up with the
   owner's own email. Never commit Zoho's embed code file.
+- With JS, the "Sign-up form" block in `js/main.js` submits the form in the
+  background (POST, `responseMode=inline`, no cookies) and sends visitors to
+  `/register/thanks/`; without JS the plain POST lands on Zoho's thank-you
+  page. It relies on Zoho's undocumented JSON reply, so re-test it after any
+  Zoho change and every few months. Never log Zoho's reply (it contains the
+  email address) and never load Zoho's own script.
+- Required Zoho form settings: submission response "Thank you page" (Same
+  tab), NOT "Redirect to a URL" (that makes the plain POST return raw JSON);
+  confirmation redirect `https://www.smartwalkingstick.co.uk/register/confirmed/`.
 - Never commit sign-up lists, emails, donor details or exports of any kind.
 - `data/donations.json` must only ever contain aggregate totals.
 

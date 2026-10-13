@@ -55,7 +55,7 @@
         <!-- Plain form that posts straight to Zoho Campaigns. No Zoho JavaScript.
              The hidden values identify our Zoho form and list; if the form is
              edited or recreated in Zoho, re-copy them and re-test a sign-up. -->
-        <form class="signup-form" method="post" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" accept-charset="UTF-8">
+        <form class="signup-form" data-signup-form method="post" action="https://zcv2-zcmp.maillist-manage.eu/weboptin.zc" accept-charset="UTF-8">
           <div class="form-field">
             <label class="form-label" for="signup-email">Email address</label>
             <input class="form-input" id="signup-email" name="CONTACT_EMAIL" type="email" required autocomplete="email" spellcheck="false" autocapitalize="off">
@@ -79,6 +79,10 @@
 
           <p class="signup-note">We'll never share your details. <a href="/privacy/">Read the privacy note</a>.</p>
           <button class="btn btn-primary" type="submit">Sign up for updates</button>
+          <p class="signup-error" data-signup-error role="alert" hidden>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span>Sorry, we couldn't sign you up just now. Please check your email address and try again, or email <a href="mailto:hello@smartwalkingstick.co.uk">hello@smartwalkingstick.co.uk</a>.</span>
+          </p>
           <p class="signup-note">We'll send you an email to confirm. If you can't see it within a few minutes, please check your junk or spam folder.</p>
         </form>
       </div>
