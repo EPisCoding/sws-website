@@ -568,6 +568,11 @@ h3,
   margin-top: 0.2em;
 }
 
+/* Long email addresses wrap instead of overflowing at 320px. */
+.signup-sent strong {
+  overflow-wrap: anywhere;
+}
+
 /* ---------- Pills and badges ---------- */
 
 .pill {
@@ -793,6 +798,11 @@ h3,
 
 .page-hero .lede {
   max-width: 42rem;
+}
+
+.page-hero .lede + p {
+  max-width: 42rem;
+  margin-top: var(--space-4);
 }
 
 /* ---------- Bento grid ---------- */

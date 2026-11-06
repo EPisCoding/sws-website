@@ -151,6 +151,7 @@
   // Sends the plain Zoho form in the background so visitors land on our own
   // /register/thanks/ page. Without JS the form still posts to Zoho directly.
   // Never log Zoho's reply: it contains the visitor's email address.
+  var SIGNUP_EMAIL_KEY = "sws-signup-email";
   var signupForm = document.querySelector("[data-signup-form]");
   if (signupForm && "fetch" in window && "URLSearchParams" in window && "FormData" in window) {
     var signupButton = signupForm.querySelector("button[type=submit]");
@@ -209,6 +210,10 @@
             window.clearTimeout(timeout);
             var reply = response.ok ? parseZohoReply(text) : null;
             if (reply && (reply.responseType === "ZC_TYPEJSON" || text.indexOf("ZC_TYPE_2_JSON") > -1)) {
+              // The thanks page shows the address back once, then deletes it.
+              try {
+                window.sessionStorage.setItem(SIGNUP_EMAIL_KEY, signupEmail.value.trim());
+              } catch (e) {}
               window.location.assign("/register/thanks/");
             } else {
               showSignupError();
@@ -222,6 +227,21 @@
           HTMLFormElement.prototype.submit.call(signupForm);
         });
     });
+  }
+
+  // /register/thanks/: show the address once, then delete it. If it is
+  // missing (no JS, storage blocked, page reloaded) the line stays hidden.
+  var signupShown = document.querySelector("[data-signup-email]");
+  if (signupShown) {
+    var shownEmail = null;
+    try {
+      shownEmail = window.sessionStorage.getItem(SIGNUP_EMAIL_KEY);
+      window.sessionStorage.removeItem(SIGNUP_EMAIL_KEY);
+    } catch (e) {}
+    if (shownEmail) {
+      signupShown.querySelector("[data-signup-email-value]").textContent = shownEmail;
+      signupShown.hidden = false;
+    }
   }
 
   /* ---------- Donation progress tracker ---------- */
