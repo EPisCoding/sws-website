@@ -691,12 +691,8 @@ h3,
   border-radius: var(--radius-sm);
 }
 
-.home-hero .pill-row {
+.home-hero .btn-row {
   margin-bottom: var(--space-6);
-}
-
-.hero-register {
-  margin-bottom: var(--space-4);
 }
 
 .hero-figure {
@@ -757,16 +753,12 @@ h3,
     justify-self: start;
   }
 
-  .home-hero .hero-register {
+  .home-hero .btn-row {
     order: 6;
   }
 
   .home-hero .pill-row {
     order: 7;
-  }
-
-  .home-hero .btn-row {
-    order: 8;
   }
 }
 
