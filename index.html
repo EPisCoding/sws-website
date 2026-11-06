@@ -260,12 +260,20 @@
           <span class="eyebrow">Support the project</span>
           <h2>Funding the next stage</h2>
         </div>
-        <div class="donation-tracker reveal" data-donation-tracker hidden>
+        <p class="donation-stage-done reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+          <span>Stage 1 complete: the £700 target for Prototype 2 was reached. Thank you to everyone who donated.</span>
+        </p>
+        <p class="mb-5 reveal">Stage 2: £1,500 target. This will fund building 10 sticks of the next version for user testing and feedback, and research into automatically detecting freezing of gait.</p>
+        <!-- Stage 2 counts only money raised after the Stage 1 total. The workflow
+             still writes the cumulative total (and the old £700 goal_pence, which
+             is ignored); the baseline and goal live here instead. -->
+        <div class="donation-tracker reveal" data-donation-tracker data-stage-baseline-pence="82000" data-stage-goal-pence="150000" hidden>
           <p class="donation-figures">
             <span class="donation-raised" data-donation-raised>£0</span>
-            <span class="donation-goal" data-donation-goal>raised of £700</span>
+            <span class="donation-goal" data-donation-goal>raised of £1,500</span>
           </p>
-          <div role="progressbar" aria-label="Donations raised toward the goal" aria-valuemin="0" aria-valuemax="700" aria-valuenow="0" data-donation-bar>
+          <div role="progressbar" aria-label="Stage 2 donations raised toward the £1,500 target" aria-valuemin="0" aria-valuemax="1500" aria-valuenow="0" data-donation-bar>
             <svg class="donation-scene" viewBox="0 0 640 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <defs>
                 <filter id="donation-glow" filterUnits="userSpaceOnUse" x="0" y="34" width="640" height="30">
@@ -285,8 +293,7 @@
           </div>
           <p class="donation-updated" data-donation-updated></p>
         </div>
-        <p class="mt-6 mb-5 reveal">The £700 target for Prototype 2 has been reached. Thank you to everyone who donated. Further donations go toward building a small batch of sticks for demonstrations and user testing.</p>
-        <div class="btn-row reveal">
+        <div class="btn-row mt-6 reveal">
           <a class="btn btn-primary" href="https://buy.stripe.com/14A14p4TH4kAeeA4gY1VK00" target="_blank" rel="noopener">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7Z"/></svg>
             Support the build</a>

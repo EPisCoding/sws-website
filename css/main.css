@@ -1383,6 +1383,20 @@ figure.photo.photo-centred {
   margin-top: var(--space-2);
 }
 
+/* Stage 1 done: tick and text, above the Stage 2 copy and bar. */
+.donation-stage-done {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.donation-stage-done .icon {
+  flex: none;
+  margin-top: 0.2em;
+  color: var(--color-accent-text);
+}
+
 /* ---------- Contact band ---------- */
 
 .contact-band {

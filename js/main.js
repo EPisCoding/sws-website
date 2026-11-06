@@ -254,8 +254,11 @@
         return response.json();
       })
       .then(function (data) {
-        var totalPence = Math.max(0, Math.round(Number(data.total_pence)) || 0);
-        var goalPence = Math.round(Number(data.goal_pence)) || 70000;
+        // Stage 2 shows only money raised after the Stage 1 total (baseline).
+        // data.goal_pence is the old Stage 1 goal and is ignored.
+        var baselinePence = Math.round(Number(tracker.getAttribute("data-stage-baseline-pence"))) || 82000;
+        var goalPence = Math.round(Number(tracker.getAttribute("data-stage-goal-pence"))) || 150000;
+        var totalPence = Math.max(0, (Math.round(Number(data.total_pence)) || 0) - baselinePence);
         var pct = Math.min(100, (totalPence / goalPence) * 100);
 
         var raisedEl = tracker.querySelector("[data-donation-raised]");
@@ -285,8 +288,8 @@
         bar.setAttribute("aria-valuemax", String(Math.round(goalPence / 100)));
         bar.setAttribute("aria-valuenow", String(Math.round(Math.min(totalPence, goalPence) / 100)));
         bar.setAttribute("aria-valuetext", reached
-          ? formatPounds(totalPence) + " raised. The " + formatPounds(goalPence) + " target has been reached."
-          : formatPounds(totalPence) + " raised of " + formatPounds(goalPence));
+          ? formatPounds(totalPence) + " raised. The " + formatPounds(goalPence) + " Stage 2 target has been reached."
+          : formatPounds(totalPence) + " raised of " + formatPounds(goalPence) + " for Stage 2");
 
         if (updatedEl && data.updated) {
           var when = new Date(data.updated);
