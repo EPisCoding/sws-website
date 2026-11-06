@@ -4,6 +4,14 @@ Static site on GitHub Pages, custom domain www.smartwalkingstick.co.uk. Deploys
 automatically from `master` — every push is live within ~1 minute. No build step.
 Never commit or push without the owner reviewing the diff first.
 
+## CSS and JS versions
+- Every page loads `/css/main.css?v=YYYYMMDD` and `/js/main.js?v=YYYYMMDD` so
+  returning visitors get the new files with the new page. Whenever
+  `css/main.css` or `js/main.js` changes, bump `?v=` on every page in the same
+  commit (add a letter for a second change on the same day, e.g. `20261106b`).
+- Check: `grep -rn "main\.\(css\|js\)" --include=*.html . | grep -v design-system`
+  must show one version only, and no link without `?v=`.
+
 ## Project updates
 - The current update is a single file, `content/current-update.md`, overwritten
   each time. There is no updates page and no update photo folder.
