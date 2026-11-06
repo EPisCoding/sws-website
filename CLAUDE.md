@@ -38,6 +38,8 @@ function at a high level only:
   existing image pattern (sizes, srcset, naming). Always set width/height and
   meaningful alt text.
 - People shown must have agreed to appear on the site.
+- People named on the site must have agreed to be named, with the description
+  used (e.g. role or background). Confirm with the owner before adding a name.
 
 ## Personal data
 - This site stores no personal data and must stay that way.

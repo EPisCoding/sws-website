@@ -1,4 +1,4 @@
-# Progress update: October 2026
+# Progress update: November 2026
 
 > Source copy for the home page Progress section. Not published (content/ is
 > excluded in _config.yml). Wording rules already applied. Notes in [square
@@ -23,7 +23,9 @@ My grandad has been part of it from the start, trying out each version and telli
 - **Shaped by people with Parkinson's.** The first prototype was shown to more than 30 members of a Parkinson's support group, and the new handle and button positions were shaped by feedback from people living with Parkinson's.
 - **Building a small batch.** We're building a small number of sticks for demonstrations and for feedback from healthcare professionals.
 - **Research at Swansea University.** I've started a Master's by Research at Swansea University, which will include carefully planned, ethically approved user testing.
-- **Thank you.** We're grateful for advice and support from Swansea University's Enterprise team, the Parkinson's community and local business networks.
+- **Thank you.** We're grateful for advice and support from the Parkinson's community, Swansea University's Enterprise team and local business networks.
+- **Design help.** Martin Brigden Gwinnutt, a retired Formula 1 engineer, is helping to shape the next versions of the stick.
+- **Mentoring.** Beatrice Zatorska, founder of PD Buddy, is mentoring the project, has given invaluable support and has written about it.
 
 ## Coming up
 
@@ -34,6 +36,6 @@ My grandad has been part of it from the start, trying out each version and telli
 
 Not yet. The Smart Walking Stick is a research prototype and is not available to buy. If you'd like to hear how it develops, sign up for occasional updates.
 
-[Button: "Register interest" → /register/]
+[Button: "Register interest" → https://zcmp.eu/zPOj (temporary; see CLAUDE.md)]
 
 We'll send occasional updates. We'll never share your details. [Link: privacy note]
