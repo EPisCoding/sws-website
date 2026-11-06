@@ -41,9 +41,17 @@ function at a high level only:
 
 ## Personal data
 - This site stores no personal data and must stay that way.
+- TEMPORARY (since 2026-11-06): every Register interest link goes to Zoho's
+  hosted form `https://zcmp.eu/zPOj` (same tab), because confirmation emails
+  were not arriving via our own form. `/register/` and `/register/thanks/`
+  stay in the repo but are unlinked, noindexed and out of `sitemap.xml`.
+  Reverse all three when switching back.
 - Register interest links go to `/register/`: a plain HTML form that posts
   straight to Zoho Campaigns (double opt-in). No Zoho JavaScript, embeds,
   iframes, tracking pixels or third-party scripts on our pages.
+- Always test sign-ups in a private window, or on a device not logged in to
+  Zoho. Zoho treats sign-ups from a logged-in browser as "added by owner" and
+  sends no confirmation email.
 - The form's hidden fields identify our Zoho form and list. If the form is
   edited or recreated in Zoho, re-copy them and re-test a sign-up with the
   owner's own email. Never commit Zoho's embed code file.
