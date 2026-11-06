@@ -14,6 +14,12 @@ Never commit or push without the owner reviewing the diff first.
   home page's `lastmod` in `sitemap.xml`, whenever the section changes. Remove
   dated events once they have passed.
 
+## Donations
+- The Stage 2 baseline and goal live on the tracker in `index.html`
+  (`data-stage-baseline-pence`, `data-stage-goal-pence`), not in the workflow.
+- The "Where Stage 2 money goes" table rows must add up to the Stage 2 target.
+  Update them whenever the target changes.
+
 ## Wording rules
 - Never claim the device helps, improves, reduces or prevents anything. The
   device is only "designed to" (e.g. "designed to support walking").

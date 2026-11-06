@@ -1380,7 +1380,64 @@ figure.photo.photo-centred {
   display: flex;
   gap: var(--space-2);
   align-items: flex-start;
-  margin-bottom: var(--space-4);
+}
+
+.donation-status-note {
+  max-width: 42rem;
+  margin-top: var(--space-4);
+}
+
+/* Stage 2 cost breakdown. Two columns fit at 320px, so rows never stack. */
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-6);
+}
+
+.cost-table caption {
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.cost-table th,
+.cost-table td {
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.cost-table th:first-child,
+.cost-table td:first-child {
+  padding-left: 0;
+}
+
+.cost-table th:last-child,
+.cost-table td:last-child {
+  padding-right: 0;
+}
+
+.cost-table thead th {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  border-bottom-color: var(--color-ink-faint);
+}
+
+.cost-table .num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cost-table tfoot th,
+.cost-table tfoot td {
+  font-weight: 700;
+  color: var(--color-ink);
+  border-top: 2px solid var(--color-ink);
+  border-bottom: none;
 }
 
 .donation-stage-done .icon {

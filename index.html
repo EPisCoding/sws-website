@@ -262,11 +262,48 @@
           <span class="eyebrow">Support the project</span>
           <h2>Funding the next stage</h2>
         </div>
-        <p class="donation-stage-done reveal">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
-          <span>Stage 1 complete: the £700 target for Prototype 2 was reached. Thank you to everyone who donated.</span>
-        </p>
-        <p class="mb-5 reveal">Stage 2: £1,500 target. This will fund building 10 sticks of the next version for user testing and feedback, and research into automatically detecting freezing of gait.</p>
+        <div class="split">
+          <div class="prose reveal">
+            <h3 class="donation-stage-done">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+              <span>Stage 1 complete: £700 target reached</span>
+            </h3>
+            <p>Your contributions paid for five sets of electronics, a 3D printer and tools. They built three working second-generation sticks, now used for demonstrations and feedback, and two further sets are going into the next design with the help of Martin's design expertise. Thank you to everyone who contributed.</p>
+          </div>
+          <figure class="photo portrait photo-centred reveal">
+            <picture>
+              <source srcset="/images/sws2-three-sticks.webp" type="image/webp">
+              <img src="/images/sws2-three-sticks.jpg" width="900" height="1200" loading="lazy"
+                   alt="Three Smart Walking Stick 2.0 prototypes laid side by side on a wooden floor, each with a white handle and a black telescopic shaft.">
+            </picture>
+            <figcaption>Three working second-generation sticks, built with Stage 1 contributions.</figcaption>
+          </figure>
+        </div>
+        <div class="prose mt-7 reveal">
+          <h3>Stage 2: £1,500 target</h3>
+          <ul>
+            <li><strong>10 sticks for user testing.</strong> Ten sticks means people with Parkinson's, and the physiotherapists who work with them, can try the stick for longer and give structured feedback on comfort, the controls and the cues, so the design can be improved.</li>
+            <li><strong>Research into detecting freezing automatically.</strong> A dedicated research stick records movement data, to explore whether freezing of gait can be recognised automatically. This is early-stage research, not a feature of the stick.</li>
+          </ul>
+          <!-- The rows must add up to the Stage 2 target (data-stage-goal-pence
+               below). Update them whenever the target changes. -->
+          <table class="cost-table">
+            <caption>Where Stage 2 money goes (approximate)</caption>
+            <thead>
+              <tr><th scope="col">What</th><th scope="col" class="num">Cost</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Electronics for 10 sticks</td><td class="num">£350</td></tr>
+              <tr><td>Shafts, grips, housings and other parts</td><td class="num">£550</td></tr>
+              <tr><td>User testing (thank-you vouchers, travel and printed information)</td><td class="num">£350</td></tr>
+              <tr><td>Research stick and data storage for freezing-of-gait research</td><td class="num">£100</td></tr>
+              <tr><td>Contingency for repairs and unexpected costs</td><td class="num">£150</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><th scope="row">Total</th><td class="num">£1,500</td></tr>
+            </tfoot>
+          </table>
+        </div>
         <!-- Stage 2 counts only money raised after the Stage 1 total. The workflow
              still writes the cumulative total (and the old £700 goal_pence, which
              is ignored); the baseline and goal live here instead. -->
@@ -293,7 +330,7 @@
               </g>
             </svg>
           </div>
-          <p class="donation-updated" data-donation-updated></p>
+          <p class="donation-updated">Totals are checked automatically several times a day.</p>
         </div>
         <div class="btn-row mt-6 reveal">
           <a class="btn btn-primary" href="https://buy.stripe.com/14A14p4TH4kAeeA4gY1VK00" target="_blank" rel="noopener">
@@ -301,6 +338,7 @@
             Support the build</a>
           <p class="donate-note">Donations are processed securely by Stripe and open in a new tab.</p>
         </div>
+        <p class="donate-note donation-status-note reveal">The Smart Walking Stick is a personal research project, not a registered charity. Contributions aren't eligible for Gift Aid and don't buy a stick or a share in the project.</p>
       </div>
     </section>
 

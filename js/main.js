@@ -263,7 +263,6 @@
 
         var raisedEl = tracker.querySelector("[data-donation-raised]");
         var goalEl = tracker.querySelector("[data-donation-goal]");
-        var updatedEl = tracker.querySelector("[data-donation-updated]");
         var bar = tracker.querySelector("[data-donation-bar]");
         var laser = tracker.querySelector(".donation-laser");
         var glow = tracker.querySelector(".donation-laser-glow");
@@ -290,15 +289,6 @@
         bar.setAttribute("aria-valuetext", reached
           ? formatPounds(totalPence) + " raised. The " + formatPounds(goalPence) + " Stage 2 target has been reached."
           : formatPounds(totalPence) + " raised of " + formatPounds(goalPence) + " for Stage 2");
-
-        if (updatedEl && data.updated) {
-          var when = new Date(data.updated);
-          if (!isNaN(when.getTime())) {
-            updatedEl.textContent = "Last updated " + when.toLocaleDateString("en-GB", {
-              day: "numeric", month: "long", year: "numeric"
-            }) + ". Donation totals refresh a few times a day.";
-          }
-        }
 
         if (reached) {
           tracker.classList.add("is-complete");
